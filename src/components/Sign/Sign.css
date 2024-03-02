@@ -1,0 +1,120 @@
+
+.sign-section{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    border-radius: 12px;
+    background-color: white;
+    padding-bottom: 30px
+}
+
+.sign-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    width: 100%;
+    margin-top: 10vh;
+}
+
+
+
+.sign-up {
+    color: #015ABA;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.underline {
+     width: 60px;
+     height: 5px;
+     background: #015ABA;
+     border-radius: 9px;
+}
+
+.sign-inputs img {
+    width: 28px;
+    height: 28px;
+    margin: 0px 15px;
+}
+
+
+.sign-container {       
+    margin: 30rem;
+    border-radius: 12px;
+    width: 60vw;
+    height: 60vh;
+    background-color: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.sign-inputs {
+   margin-top: 55px;
+   display: flex;
+   flex-direction: column;
+   gap: 25px
+}
+.password-input, .email-input, .username{
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: 240px;
+    height: 40px;
+    background: #eaeaea;
+    border-radius: 16px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+input:-internal-autofill-selected {
+    appearance: none !important;
+    background-color: transparent !important; /* Change to match your design */
+    color: inherit !important; /* Change to match your design */
+}
+
+.password-input input, .email-input input, .username input{
+    height: 50px;
+    width: 400px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #797979;
+    font-size: 14px;
+}
+
+.submit-sign {
+    margin-left: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 36px;
+    border: none;
+    color: #fff;
+    background: #015ABA;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .sign-container {
+        width: 90vw; /* Adjust the width */
+        height: auto; /* Adjust the height */
+        margin: 2rem auto; /* Adjust the margin */
+    }
+
+    .password-input, .email-input, .username {
+        width: 80%; /* Adjust the width */
+    }
+
+    .password-input input, .email-input input, .username input {
+        width: 100%; /* Adjust the width */
+    }
+
+    .submit-sign {
+        margin-left: 5rem; /* Adjust the margin */
+    }
+}
+
+
