@@ -1,10 +1,9 @@
-
 .login-section{
     display: flex;
     height: 100vh;
     border-radius: 12px;
-    background-color: white;
     padding-bottom: 30px
+    
 }
 
 .login {
@@ -16,8 +15,8 @@
 .login-container {
     margin: 5rem;
     border-radius: 12px;
-    width: 40vw;
-    height: 80vh;
+    width: 50%; /* Adjust the width for all devices */
+    height: auto; /* Adjust the height for all devices */
     background-color: white;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
@@ -59,7 +58,7 @@
     display: flex;
     align-items: center;
     margin: auto;
-    width: 360px;
+    width: 80%; /* Adjust the width for all devices */
     height: 60px;
     background: #eaeaea;
     border-radius: 16px;
@@ -68,21 +67,21 @@
 
 .password-input input, .email-input input{
     height: 50px;
-    width: 400px;
+    width: 100%; /* Adjust the width for all devices */
     background: transparent;
     border: none;
     outline: none;
     color: #797979;
-    font-size: 19px;
-}
+    font-size: 1rem;
+}           
 
 .login-inputs img {
     width: 28px;
     height: 28px;
-    margin: 0px 30px;
+    margin: 0px 15px;
 }
 
-.submit-container {
+.login-sign  {
     display: flex;
     gap: 30px;
     margin: 60px auto
@@ -92,7 +91,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 180px;
+    width: 140px;
     height: 36px;
     color: #fff;
     background: #015ABA;
@@ -103,11 +102,16 @@
     cursor: pointer;
 }
 
+/* Style that remove the password manager auto-fill from browsers */
+input {
+    -webkit-background-clip: text !important;
+}
+
 .sign-button {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 180px;
+    width: 140px;
     height: 36px;
     border: none;
     color: #fff;
@@ -125,7 +129,22 @@
 }
 
 .info-container {
-    padding-left: 80px;
+    padding-left: 40px;
+    width: 70%;
+}
+
+@media (max-width: 1200px) {
+    .login-container {
+        width: 90vw; /* Adjust the width for large devices */
+    }
+
+    .password-input, .email-input {
+        width: 90%; /* Adjust the width for large devices */
+    }
+
+    .password-input input, .email-input input {
+        width: 100%; /* Adjust the width for large devices */
+    }
 }
 
 @media (max-width: 768px) {
@@ -134,9 +153,10 @@
     }
 
     .login-container {
-        width: 90vw; /* Adjust the width */
+        width: 95vw; /* Adjust the width for medium devices */
         margin-top: none;
         margin: 2rem auto; 
+        margin-bottom: 10rem;
     }
 
     .login-inputs img {
@@ -145,19 +165,33 @@
 
     .sign-button, .submit-login {
         width: 22vw;
+        font-size: 2.5vw;
     }
     
 
     .password-input, .email-input {
-        width: 80%; /* Adjust the width */
+        width: 95%; /* Adjust the width for medium devices */
     }
 
     .password-input input, .email-input input {
-        width: 100%; /* Adjust the width */
+        width: 100%; /* Adjust the width for medium devices */
     }
 
     .info-section {
-        display: none; /* Hide the info section */
+        display: none   
     }
 }
 
+@media (max-width: 480px) {
+    .login-container {
+        width: 100vw; /* Adjust the width for small devices */
+    }
+
+    .password-input, .email-input {
+        width: 100%; /* Adjust the width for small devices */
+    }
+
+    .password-input input, .email-input input {
+        width: 100%; /* Adjust the width for small devices */
+    }
+}

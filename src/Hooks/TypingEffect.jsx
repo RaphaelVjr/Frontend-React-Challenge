@@ -2,7 +2,7 @@ import { useTypewriter, Cursor } from 'react-simple-typewriter';
 
 function TypeWriter() {
   const [text] = useTypewriter({
-    words: ['Hi, my name is Raphael Vitorio!', 'And im applying for this role as a Fullstack Developer.',],
+    words: ['Hi!', 'My name is Raphael Vitorio!', 'That is my project for the apply ',],
     loop: {},
     typeSpeed: 50,
 

@@ -7,6 +7,8 @@ import {
 } from "@progress/kendo-react-grid";
 import { ProgressBar } from "@progress/kendo-react-progressbars";
 import { Rating } from "@progress/kendo-react-inputs";
+import { format } from 'date-fns';
+
 export const BadgeCell = (props) => {
   const { dataItem } = props;
   const isOnline = dataItem.is_online;
@@ -34,14 +36,26 @@ export const BadgeCell = (props) => {
     </td>
   );
 };
-export const BudgetCell = (props) => {
+
+export const UpdatedDateCell = (props) => {
   const { dataItem } = props;
-  if (dataItem && dataItem.target !== undefined) {
-    const budget = dataItem.target;
-    const formattedBudget = `$${budget.toFixed(3)}`;
-    return <td {...props.tdProps}>{formattedBudget}</td>;
+  if (dataItem && dataItem.updated_at !== undefined) {
+    const date = new Date(dataItem.updated_at);
+    const formattedDate = format(date, 'yyyy-MM-dd');
+    return <td {...props.tdProps}>{formattedDate}</td>;
   }
 };
+
+export const CreatedDateCell = (props) => {
+  const { dataItem } = props;
+  if (dataItem && dataItem.created_at !== undefined) {
+    const date = new Date(dataItem.created_at);
+    const formattedDate = format(date, 'yyyy-MM-dd');
+    return <td {...props.tdProps}>{formattedDate}</td>;
+  }
+};
+
+
 export const ColumnMenu = (props) => {
   return (
     <div>
@@ -103,28 +117,11 @@ export const RatingCell = (props) => {
   return (
     <td {...props.tdProps}>
       <Rating
+        defaultValue={0}
+         max={10}
         value={value === null ? "" : props.dataItem[field]}
         readonly={true}
       />{" "}
-    </td>
-  );
-};
-export const CountryCell = (props) => {
-  const { dataItem } = props;
-  if (!dataItem || !dataItem.flag) {
-    return null;
-  }
-  return (
-    <td {...props.tdProps}>
-      <img
-        src={dataItem.flag}
-        width="30"
-        height="16"
-        alt="Flag"
-        style={{
-          marginLeft: "12px",
-        }}
-      />
     </td>
   );
 };

@@ -6,7 +6,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Login from './components/Login/Login';
 import SignUp from './components/Sign/SignUp';
 import Home from './pages/Home';
-import MoviesGrid from './pages/MoviesGrid';
+import MoviesGrid from './pages/MoviesGrid'
+import MovieCard from './components/MovieCard';
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
   {
     path: '/movies', 
     element: <MoviesGrid />,
+  },
+  {
+    path: '/movie-card',
+    element: <MovieCard />
   },
   {
     path: '/sign',

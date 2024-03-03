@@ -1,5 +1,4 @@
 import * as React from "react";
-import * as ReactDOM from "react-dom";
 import { getter } from "@progress/kendo-react-common";
 import { process } from "@progress/kendo-data-query";
 import { Input } from "@progress/kendo-react-inputs";
@@ -9,12 +8,12 @@ import { ExcelExport } from "@progress/kendo-react-excel-export";
 import { Button } from "@progress/kendo-react-buttons";
 import {
     BadgeCell,
-    BudgetCell,
+    ProgressCell,
+    UpdatedDateCell,
+    CreatedDateCell,
     ColumnMenu,
     PersonCell,
-    ProgressCell,
-    RatingCell, 
-    CountryCell,
+    RatingCell,
 } from "../components/Movies/custom-cells";
 import {
     Grid,
@@ -25,8 +24,8 @@ import {
     setGroupIds,
     setExpandedState,
 } from "@progress/kendo-react-data-tools";
-import { employees } from "../components/Movies/employees";
 import "../components/Movies/style.css";
+import { format } from 'date-fns';
 const DATA_ITEM_KEY = "id";
 const SELECTED_FIELD = "selected";
 const initialDataState = {
@@ -45,17 +44,53 @@ const processWithGroups = (data, dataState) => {
 const MoviesGrid = () => {
     const idGetter = getter("id");
     const [filterValue, setFilterValue] = React.useState();
-    const [filteredData, setFilteredData] = React.useState(employees);
+    const [topMovies, setTopMovies] = React.useState([])
+    const [filteredData, setFilteredData] = React.useState(topMovies);
     const [currentSelectedState, setCurrentSelectedState] = React.useState({});
     const [dataState, setDataState] = React.useState(initialDataState);
     const [dataResult, setDataResult] = React.useState(
         process(filteredData, dataState)
     );
+
+    const moviesUrl = 'https://api.themoviedb.org/3/movie/';
+    const ApiKey = 'api_key=370c9e0ff0179afc2b5f12a30b202de9';
+
+    const getTopRatedMovies = async (moviesUrl) => {
+        const res = await fetch(moviesUrl);
+        const data = await res.json();
+
+        const movies = await Promise.all(data.results.map(async (movie) => {
+            const creditsRes = await fetch(`https://api.themoviedb.org/3/movie/${movie.id}/credits?${ApiKey}`);
+            const creditsData = await creditsRes.json();
+            const director = creditsData.crew.find(person => person.job === 'Director');
+
+            return {
+                id: movie.id,
+                title: movie.original_title,
+                director: director ? director.name : 'Unknown',
+                average_score: movie.vote_average,
+                updated_at: format(new Date(movie.release_date), 'yyyy-MM-dd'), // This is usually the release date
+                created_at: format(new Date(movie.release_date), 'yyyy-MM-dd'), // This is usually the release date
+            };
+        }));
+
+        return movies;
+    };
+
+    React.useEffect(() => {
+        const topRatedUrl = `${moviesUrl}top_rated?${ApiKey}`;
+        getTopRatedMovies(topRatedUrl).then(movies => {
+            setTopMovies(movies);
+            setFilteredData(movies);
+        });
+        console.log(topRatedUrl);
+    }, []);
+
     const [data, setData] = React.useState(filteredData);
     const onFilterChange = (ev) => {
         let value = ev.value;
         setFilterValue(ev.value);
-        let newData = employees.filter((item) => {
+        let newData = topMovies.filter((item) => {
             let match = false;
             for (const property in item) {
                 if (
@@ -92,7 +127,7 @@ const MoviesGrid = () => {
     };
     const [resultState, setResultState] = React.useState(
         processWithGroups(
-            employees.map((item) => ({
+            topMovies.map((item) => ({
                 ...item,
                 ["selected"]: currentSelectedState[idGetter(item)],
             })),
@@ -108,6 +143,12 @@ const MoviesGrid = () => {
         setDataResult(processedData);
         setDataState(event.dataState);
     };
+
+    React.useEffect(() => {
+        dataStateChange({ dataState });
+    }, [filteredData]);
+
+
     const onExpandChange = React.useCallback(
         (event) => {
             const newData = [...dataResult.data];
@@ -222,7 +263,7 @@ const MoviesGrid = () => {
     return (
         <div>
             <ExcelExport
-                data={employees}
+                data={topMovies}
                 ref={(exporter) => {
                     _export = exporter;
                 }}
@@ -273,45 +314,23 @@ const MoviesGrid = () => {
                         headerSelectionValue={checkHeaderSelectionValue()}
                     />
 
-                    <Column title="Employee">
+                    <Column title="Movie">
                         <Column
-                            field="full_name"
+                            field="title"
                             title="Title"
                             columnMenu={ColumnMenu}
-                            cells={{
-                                data: PersonCell,
-                            }}
                             width="250px"
                         />
                         <Column
-                            field="job_title"
+                            field="director"
                             title="Director"
                             columnMenu={ColumnMenu}
                             width="220px"
                         />
-                        <Column
-                            field="country"
-                            title="Country"
-                            cells={{
-                                data: CountryCell,
-                            }}
-                            columnMenu={ColumnMenu}
-                            width="100px"
-                        />
-                        <Column
-                            field="is_online"
-                            title="Status"
-                            filter="text"
-                            cells={{
-                                data: BudgetCell,
-                            }}
-                            columnMenu={ColumnMenu}
-                            width="100px"
-                        />
                     </Column>
-                    <Column title="Perforamnce">
+                    <Column title="Info">
                         <Column
-                            field="rating"
+                            field="average_score"
                             title="Average Score"
                             cells={{
                                 data: RatingCell,
@@ -320,35 +339,21 @@ const MoviesGrid = () => {
                             width="230px"
                         />
                         <Column
-                            field="target"
-                            title="Engagement"
+                            field="updated_at"
+                            title="Updated at"
                             cells={{
-                                data: ProgressCell,
+                                data: UpdatedDateCell,
                             }}
                             columnMenu={ColumnMenu}
                             width="250px"
                         />
                         <Column
-                            field="budget"
-                            title="Budget"
+                            field="created_at"
+                            title="Created At"
                             columnMenu={ColumnMenu}
                             cells={{
-                                data: BudgetCell,
+                                data: CreatedDateCell,
                             }}
-                            width="230px"
-                        />
-                    </Column>
-                    <Column title="Contacts">
-                        <Column
-                            field="phone"
-                            title="Phone"
-                            columnMenu={ColumnMenu}
-                            width="230px"
-                        />
-                        <Column
-                            field="address"
-                            title="Address"
-                            columnMenu={ColumnMenu}
                             width="230px"
                         />
                     </Column>
@@ -407,30 +412,11 @@ const MoviesGrid = () => {
                     />
                     <Column title="Employee">
                         <Column
-                            field="full_name"
-                            title="Contact Name"
-                            columnMenu={ColumnMenu}
-                            cells={{
-                                data: CountryCell,
-                            }}
-                            width="250px"
-                        />
-                        <Column
                             field="job_title"
                             title="Job Title"
                             filter="numeric"
                             columnMenu={ColumnMenu}
                             width="220px"
-                        />
-                        <Column
-                            field="flag"
-                            title="Country"
-                            filter="numeric"
-                            cells={{
-                                data: CountryCell,
-                            }}
-                            columnMenu={ColumnMenu}
-                            width="100px"
                         />
                         <Column
                             field="is_online"
@@ -445,7 +431,7 @@ const MoviesGrid = () => {
                     </Column>
                     <Column title="Perforamnce">
                         <Column
-                            field="rating"
+                            field="average_score"
                             title="Rating"
                             cells={{
                                 data: RatingCell,
@@ -461,15 +447,6 @@ const MoviesGrid = () => {
                             }}
                             columnMenu={ColumnMenu}
                             width="250px"
-                        />
-                        <Column
-                            field="budget"
-                            title="Budget"
-                            columnMenu={ColumnMenu}
-                            cells={{
-                                data: BudgetCell,
-                            }}
-                            width="230px"
                         />
                     </Column>
                     <Column title="Contacts">
@@ -491,4 +468,6 @@ const MoviesGrid = () => {
         </div>
     );
 };
+
+
 export default MoviesGrid;  
