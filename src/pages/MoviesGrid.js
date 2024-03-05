@@ -7,14 +7,11 @@ import { GridPDFExport } from "@progress/kendo-react-pdf";
 import { ExcelExport } from "@progress/kendo-react-excel-export";
 import { Button } from "@progress/kendo-react-buttons";
 import {
-    BadgeCell,
-    ProgressCell,
     UpdatedDateCell,
     CreatedDateCell,
     ColumnMenu,
-    PersonCell,
     RatingCell,
-} from "../components/Movies/custom-cells";
+} from "../components/Movies/CustomCells";
 import {
     Grid,
     GridColumn as Column,
@@ -26,6 +23,7 @@ import {
 } from "@progress/kendo-react-data-tools";
 import "../components/Movies/style.css";
 import { format } from 'date-fns';
+import { toast } from 'react-toastify';
 const DATA_ITEM_KEY = "id";
 const SELECTED_FIELD = "selected";
 const initialDataState = {
@@ -52,6 +50,7 @@ const MoviesGrid = () => {
         process(filteredData, dataState)
     );
 
+
     const moviesUrl = 'https://api.themoviedb.org/3/movie/';
     const ApiKey = 'api_key=370c9e0ff0179afc2b5f12a30b202de9';
 
@@ -64,14 +63,42 @@ const MoviesGrid = () => {
             const creditsData = await creditsRes.json();
             const director = creditsData.crew.find(person => person.job === 'Director');
 
-            return {
-                id: movie.id,
+
+            const movieExists = async (title) => {
+                const response = await fetch(`http://127.0.0.1:3000/movies/exists?title=${encodeURIComponent(title)}`);
+                const data = await response.json();
+                return data.exists;
+            };
+
+            const movieData = {
                 title: movie.original_title,
                 director: director ? director.name : 'Unknown',
                 average_score: movie.vote_average,
-                updated_at: format(new Date(movie.release_date), 'yyyy-MM-dd'), // This is usually the release date
-                created_at: format(new Date(movie.release_date), 'yyyy-MM-dd'), // This is usually the release date
+                updated_at: movie.release_date,
+                created_at: movie.release_date,
             };
+
+            if (!await movieExists(movieData.title)) {
+                const response = await fetch('http://127.0.0.1:3000/movies', {
+                    method: 'POST',
+                    headers: {
+                        'Access-Control-Allow-Origin': '*',
+                        'Accept-Language': 'pt-BR',
+                        'Accept-Encoding': 'gzip, deflate, br',
+                        'Content-Type': 'application/json',
+                        Accept: 'application/json',
+                    },
+                    credentials: 'include',
+                    body: JSON.stringify({ movie: movieData }),
+                });
+
+                if (!response.ok) {
+                    toast.error('Error creating movie');
+                }
+            } else {
+                toast.error('Movie already exists');
+            }
+            return movieData;
         }));
 
         return movies;
@@ -83,7 +110,6 @@ const MoviesGrid = () => {
             setTopMovies(movies);
             setFilteredData(movies);
         });
-        console.log(topRatedUrl);
     }, []);
 
     const [data, setData] = React.useState(filteredData);
@@ -125,7 +151,7 @@ const MoviesGrid = () => {
         setDataState(clearedPagerDataState);
         setData(newData);
     };
-    const [resultState, setResultState] = React.useState(
+    const [resultState] = React.useState(
         processWithGroups(
             topMovies.map((item) => ({
                 ...item,
@@ -146,7 +172,7 @@ const MoviesGrid = () => {
 
     React.useEffect(() => {
         dataStateChange({ dataState });
-    }, [filteredData]);
+    }, [filteredData, dataState]);
 
 
     const onExpandChange = React.useCallback(
@@ -192,24 +218,26 @@ const MoviesGrid = () => {
         data: setSelectedValue(resultState.data),
         collapsedIds: [],
     });
+
     const onHeaderSelectionChange = React.useCallback(
         (event) => {
             const checkboxElement = event.syntheticEvent.target;
             const checked = checkboxElement.checked;
             const newSelectedState = {};
-            data.forEach((item) => {
+            topMovies.forEach((item) => {
                 newSelectedState[idGetter(item)] = checked;
             });
             setCurrentSelectedState(newSelectedState);
-            const newData = data.map((item) => ({
+            const newData = topMovies.map((item) => ({
                 ...item,
                 [SELECTED_FIELD]: checked,
             }));
             const newDataResult = processWithGroups(newData, dataState);
             setDataResult(newDataResult);
         },
-        [data, dataState]
+        [data, dataState, idGetter, topMovies]
     );
+
     const onSelectionChange = (event) => {
         const selectedProductId = event.dataItem.id;
         const newSelectedState = {
@@ -217,7 +245,7 @@ const MoviesGrid = () => {
             [selectedProductId]: !currentSelectedState[selectedProductId],
         };
         setCurrentSelectedState(newSelectedState);
-        const newData = data.map((item) => {
+        const newData = topMovies.map((item) => {
             return {
                 ...item,
                 selected: newSelectedState[idGetter(item)],
@@ -226,9 +254,10 @@ const MoviesGrid = () => {
         const newDataResult = processWithGroups(newData, dataState);
         setDataResult(newDataResult);
     };
-    const getNumberOfItems = (data) => {
+
+    const getNumberOfItems = (topMovies) => {
         let count = 0;
-        data.forEach((item) => {
+        topMovies.forEach((item) => {
             if (item.items) {
                 count = count + getNumberOfItems(item.items);
             } else {
@@ -237,9 +266,9 @@ const MoviesGrid = () => {
         });
         return count;
     };
-    const getNumberOfSelectedItems = (data) => {
+    const getNumberOfSelectedItems = (topMovies) => {
         let count = 0;
-        data.forEach((item) => {
+        topMovies.forEach((item) => {
             if (item.items) {
                 count = count + getNumberOfSelectedItems(item.items);
             } else {
@@ -372,7 +401,7 @@ const MoviesGrid = () => {
                     pageable={{
                         pageSizes: true,
                     }}
-                    data={dataResult}
+                    data={topMovies}
                     sortable={true}
                     total={resultState.total}
                     onDataStateChange={dataStateChange}
@@ -410,29 +439,24 @@ const MoviesGrid = () => {
                         width={50}
                         headerSelectionValue={checkHeaderSelectionValue()}
                     />
-                    <Column title="Employee">
+                    <Column title="Movie">
                         <Column
-                            field="job_title"
-                            title="Job Title"
-                            filter="numeric"
+                            field="title"
+                            title="Title"
+                            columnMenu={ColumnMenu}
+                            width="250px"
+                        />
+                        <Column
+                            field="director"
+                            title="Director"
                             columnMenu={ColumnMenu}
                             width="220px"
                         />
-                        <Column
-                            field="is_online"
-                            title="Status"
-                            filter="text"
-                            cells={{
-                                data: BadgeCell,
-                            }}
-                            columnMenu={ColumnMenu}
-                            width="100px"
-                        />
                     </Column>
-                    <Column title="Perforamnce">
+                    <Column title="Info">
                         <Column
                             field="average_score"
-                            title="Rating"
+                            title="Average Score"
                             cells={{
                                 data: RatingCell,
                             }}
@@ -440,26 +464,21 @@ const MoviesGrid = () => {
                             width="230px"
                         />
                         <Column
-                            field="target"
-                            title="Engagement"
+                            field="updated_at"
+                            title="Updated at"
                             cells={{
-                                data: ProgressCell,
+                                data: UpdatedDateCell,
                             }}
                             columnMenu={ColumnMenu}
                             width="250px"
                         />
-                    </Column>
-                    <Column title="Contacts">
                         <Column
-                            field="phone"
-                            title="Phone"
+                            field="created_at"
+                            title="Created At"
                             columnMenu={ColumnMenu}
-                            width="230px"
-                        />
-                        <Column
-                            field="address"
-                            title="Address"
-                            columnMenu={ColumnMenu}
+                            cells={{
+                                data: CreatedDateCell,
+                            }}
                             width="230px"
                         />
                     </Column>

@@ -40,7 +40,7 @@ export const BadgeCell = (props) => {
 export const UpdatedDateCell = (props) => {
   const { dataItem } = props;
   if (dataItem && dataItem.updated_at !== undefined) {
-    const date = new Date(dataItem.updated_at);
+    const date = (dataItem.updated_at);
     const formattedDate = format(date, 'yyyy-MM-dd');
     return <td {...props.tdProps}>{formattedDate}</td>;
   }
@@ -49,7 +49,7 @@ export const UpdatedDateCell = (props) => {
 export const CreatedDateCell = (props) => {
   const { dataItem } = props;
   if (dataItem && dataItem.created_at !== undefined) {
-    const date = new Date(dataItem.created_at);
+    const date = (dataItem.created_at);
     const formattedDate = format(date, 'yyyy-MM-dd');
     return <td {...props.tdProps}>{formattedDate}</td>;
   }
@@ -73,7 +73,7 @@ export const PersonCell = (props) => {
   const imageDataUrl = dataItem.image.replace(/url\('(.*)'\)/, "$1");
   return (
     <td {...props.tdProps}>
-      <img src={imageDataUrl} width="34" height="34" className="contact-img" />
+      <img alt="movie-posteer" src={imageDataUrl} width="34" height="34" className="contact-img" />
       <span
         style={{
           display: "inlineBlock",
@@ -108,20 +108,20 @@ export const ProgressCell = (props) => {
     </td>
   );
 };
-export const RatingCell = (props) => {
-  const field = props.field || "";
-  const value = props.dataItem[field];
-  if (props.rowType === "groupHeader") {
-    return null;
-  }
-  return (
-    <td {...props.tdProps}>
-      <Rating
-        defaultValue={0}
-         max={10}
-        value={value === null ? "" : props.dataItem[field]}
-        readonly={true}
-      />{" "}
-    </td>
-  );
-};
+  export const RatingCell = (props) => {
+    const field = props.field || "";
+    const value = props.dataItem[field];
+    if (props.rowType === "groupHeader") {
+      return null;
+    }
+    return (
+      <td {...props.tdProps}>
+        <Rating
+          defaultValue={0}
+          max={10}
+          value={value === null ? "" : props.dataItem[field]}
+          readonly={true}
+        />{" "}
+      </td>
+    );
+  };

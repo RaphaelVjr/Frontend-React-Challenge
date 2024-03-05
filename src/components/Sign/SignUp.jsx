@@ -14,10 +14,10 @@ const SignUp = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [passwordsMatch, setPasswordsMatch] = useState(true);
+  const [setPasswordsMatch] = useState(true);
   const [passwordConfirmation, setPasswordConfirmation] = useState('');
   const [isValidEmail, setIsValidEmail] = useState(true);
-  const [isValidPassword, setIsValidPassword] = useState(true);
+  const [setIsValidPassword] = useState(true);
 
   const handlePasswordChange = (e) => {
     const newPassword = e.target.value;
@@ -115,11 +115,11 @@ const SignUp = () => {
             </div>
             <div className='password-input'>
               <img src={padlockImage} alt="" />
-              <input type="password" placeholder="Password" value={password} onChange={handlePasswordChange} required />
+              <input id="sign" type="password" placeholder="Password" value={password} onChange={handlePasswordChange} required />
             </div>
             <div className='password-input'>
               <img src={passwordConfirmIcon} alt="" />
-              <input type="password" placeholder="Confirm Password" value={passwordConfirmation} onChange={handlePasswordConfirmationChange} required />
+              <input id="password-confirmation" type="password" placeholder="Confirm Password" value={passwordConfirmation} onChange={handlePasswordConfirmationChange} required />
             </div>
           </div>
           <div className='password-match'>
