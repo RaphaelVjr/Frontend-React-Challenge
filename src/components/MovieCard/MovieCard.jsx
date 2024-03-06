@@ -4,6 +4,8 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import 'react-toastify/dist/ReactToastify.min.css';
+import 'react-toastify/dist/ReactToastify.css';
 import './MovieCard.css';
 import { toast } from 'react-toastify';
 
@@ -26,7 +28,7 @@ const MovieCard = ({ movie }) => {
 
 const getMoviePosters = async (movies) => {
   const posters = {}
-  
+
   const fetchPromises = movies.map(movie => 
     fetch(`https://api.themoviedb.org/3/search/movie?${ApiKey}&query=${encodeURIComponent(movie.title)}`)
       .then(res => res.json())
