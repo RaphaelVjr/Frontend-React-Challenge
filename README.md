@@ -1,5 +1,5 @@
 
-# Kendo Movies Frontend Project Job Apply
+# Kendo Movies Project Job Apply
 
 A movie web app that consume an large movies API from TMDB.
 
@@ -60,6 +60,7 @@ npm install
 ```
 
 
+## CSV Import file
 ## API Documentation
 
 #### Return top rated movies:
