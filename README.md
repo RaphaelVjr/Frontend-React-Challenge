@@ -62,7 +62,7 @@ npm install
 
 ## CSV Import file
 
-First you need to login as `admin@rotten` password: `admin`, after you'll be redirected to `/movies`, you import the file in the input and submit. After this will load the movies from your csv file, duplicated movies won't be loaded.
+First you need to login as `admin@rotten` password: `admin`, after you'll be redirected to `/dashboard`, you import the file in the input and submit. After this will load the movies from your csv file, duplicated movies won't be loaded.
 ## API Documentation
 
 #### Return top rated movies:
@@ -138,7 +138,17 @@ To run tests in the repository using Jest you need to:
 
 ## Demonstração
 
-Insira um gif ou um link de alguma demonstração
+Home
+
+
+Login
+
+
+Signup
+
+
+Dashboard
+
 
 
 ## Kendo License
