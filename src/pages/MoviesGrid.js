@@ -77,9 +77,18 @@ const MoviesGrid = () => {
                 title: movie.original_title,
                 director: director ? director.name : 'Unknown',
                 average_score: movie.vote_average,
-                updated_at: movie.release_date,
+                updated_at: formatDate(new Date()),
                 created_at: movie.release_date,
             };
+
+            function formatDate(date) {
+                const year = date.getFullYear();
+                const month = (date.getMonth() + 1).toString().padStart(2, '0'); // months are 0-indexed in JavaScript
+                const day = date.getDate().toString().padStart(2, '0');
+                const hours = date.getHours().toString().padStart(2, '0');
+                const minutes = date.getMinutes().toString().padStart(2, '0');
+                return `${year}-${month}-${day} ${hours}:${minutes}`;
+            }
 
             if (!await movieExists(movieData.title)) {
                 const response = await fetch('http://127.0.0.1:3000/movies', {
@@ -379,22 +388,22 @@ const MoviesGrid = () => {
                             width="230px"
                         />
                         <Column
-                            field="updated_at"
-                            title="Released At"
-                            cells={{
-                                data: UpdatedDateCell,
-                            }}
-                            columnMenu={ColumnMenu}
-                            width="250px"
-                        />
-                        <Column
                             field="created_at"
-                            title="Created At"
+                            title="Released At"
                             columnMenu={ColumnMenu}
                             cells={{
                                 data: CreatedDateCell,
                             }}
                             width="230px"
+                        />
+                        <Column
+                            field="updated_at"
+                            title="Updated at"
+                            cells={{
+                                data: UpdatedDateCell,
+                            }}
+                            columnMenu={ColumnMenu}
+                            width="250px"
                         />
                     </Column>
                 </Grid>
