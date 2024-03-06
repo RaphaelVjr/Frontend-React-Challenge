@@ -13,7 +13,7 @@ A movie web app that consume an large movies API from TMDB.
 - Admin dashboard to import more movies
 
 
-## Clone repostory
+## Clone repository
 
 Clone repository
 
