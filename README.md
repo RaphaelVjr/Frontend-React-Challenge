@@ -1,5 +1,5 @@
 
-# Kendo Movies Project Job Apply
+# Kendo Movies Frontend Project Job Apply
 
 A movie web app that consume an large movies API from TMDB.
 
