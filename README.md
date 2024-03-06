@@ -13,11 +13,11 @@ A movie web app that consume an large movies API from TMDB.
 - Admin dashboard to import more movies
 
 
-## Clone repostory
+## Clone repository
 
 Clone repository
 
-```http
+```bash
 git clone https://github.com/RaphaelVjr/frontend.git
 ```
 
@@ -55,7 +55,7 @@ Check if this is set for the `.env` file.
 
 After clone the repository, you need to install all dependencies.
 
-```http
+```bash
 npm install
 ```
 
