@@ -126,11 +126,6 @@ To run tests in the repository using Jest you need to:
    [React]: <https://nodejs.org/en>
    [Kendo UI]: <https://www.telerik.com/kendo-react-ui/components/getting-started/>
    [Repository]: <https://github.com/RaphaelVjr/Ruby-Backend-Project>
-
-## Melhorias
-
-Que melhorias você fez no seu código? Ex: refatorações, melhorias de performance, acessibilidade, etc
-
 ## Color Documentation
 
 | Cor               | Hexadecimal                                                |
