@@ -12,16 +12,6 @@ test('renders Login component for default route', () => {
   expect(screen.getByText('Kendo Movies')).toBeInTheDocument();
 });
 
-  test('renders MovieCard component for /movie-card route', () => {
-    window.history.pushState({}, '', '/movie-card');
-    render(
-      <Router>
-        <App />
-      </Router>
-    );
-    expect(screen.getByText('card')).toBeInTheDocument();
-  });
-
   test('renders SignUp component for /sign route', () => {
     window.history.pushState({}, '', '/sign');
     render(

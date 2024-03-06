@@ -20,47 +20,43 @@ function Login() {
     };
 
     const handleSubmit = async event => {
-        event.preventDefault();
+    event.preventDefault();
 
-        const requestBody = { email, password };
+    const requestBody = { email, password };
 
-        const response = await fetch('http://127.0.0.1:3000/login', {
-            method: 'POST',
-            headers: {
-                'Accept-Language': 'pt-BR',
-                'Accept-Encoding': 'gzip, deflate, br',
-                'Content-Type': 'application/json',
-                Accept: 'application/json',
-            },
-            credentials: 'include',
-            body: JSON.stringify(requestBody),
-        });
+    const response = await fetch('http://127.0.0.1:3000/login', {
+        method: 'POST',
+        headers: {
+            'Accept-Language': 'pt-BR',
+            'Accept-Encoding': 'gzip, deflate, br',
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+        },
+        credentials: 'include',
+        body: JSON.stringify(requestBody),
+    });
 
-        if (response.ok) {
-            const data = await response.json();
+    if (response.ok) {
+        const data = await response.json();
 
-            sessionStorage.setItem('user', JSON.stringify(data));
+        sessionStorage.setItem('user', JSON.stringify(data));
 
-            if (requestBody.email) {
-                const domain = requestBody.email.split('@')[1].toLowerCase();
-                if (domain === 'rotten') {
-                    toast.success('Login successful');
-                    setTimeout(() => {
-                        window.location.href = '/movies';
-                    }, 2000);
-                } else {
-                    toast.success('Login successful');
-                    setTimeout(() => {
-                        window.location.href = '/movie-card';
-                    }, 2000);
-                }
-            } else {
-                toast.error('User not found or incorrect info');
-            }
+        if (email === 'admin@rotten' && password === 'admin') {
+            sessionStorage.setItem('role', 'admin');
+            toast.success('Logged in as admin');
+            setTimeout(() => {
+                window.location.href = '/movies';
+            }, 2000);
         } else {
-            toast.error('User not found or incorrect info');
-        }   
-    };
+            toast.success('Login successful');
+            setTimeout(() => {
+                window.location.href = '/movie-card';
+            }, 2000);
+        }
+    } else {
+        toast.error('User not found or incorrect info');
+    }   
+};
 
     return (
         <div className='login-section'>

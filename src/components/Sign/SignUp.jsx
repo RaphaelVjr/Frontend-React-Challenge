@@ -14,10 +14,10 @@ const SignUp = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [passwordsMatch, setPasswordsMatch] = useState(true);
+  const [setPasswordsMatch] = useState(true);
   const [passwordConfirmation, setPasswordConfirmation] = useState('false');
   const [isValidEmail, setIsValidEmail] = useState(true);
-  const [isValidPassword, setIsValidPassword] = useState(true);
+  const [setIsValidPassword] = useState(true);
 
   const handlePasswordChange = (e) => {
     const newPassword = e.target.value;

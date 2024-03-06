@@ -10,11 +10,11 @@ import {
     UpdatedDateCell,
     CreatedDateCell,
     ColumnMenu,
-    RatingCell,
 } from "../components/Movies/CustomCells";
 import {
     Grid,
     GridColumn as Column,
+
     GridToolbar,
 } from "@progress/kendo-react-grid";
 import {
@@ -22,8 +22,11 @@ import {
     setExpandedState,
 } from "@progress/kendo-react-data-tools";
 import "../components/Movies/style.css";
-import { format } from 'date-fns';
 import { toast } from 'react-toastify';
+import FileUpload from "../components/Movies/FileUpload/FileUpload";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
+
 const DATA_ITEM_KEY = "id";
 const SELECTED_FIELD = "selected";
 const initialDataState = {
@@ -40,7 +43,7 @@ const processWithGroups = (data, dataState) => {
     return newDataState;
 };
 const MoviesGrid = () => {
-    const idGetter = getter("id");
+    const idGetter = getter(DATA_ITEM_KEY);
     const [filterValue, setFilterValue] = React.useState();
     const [topMovies, setTopMovies] = React.useState([])
     const [filteredData, setFilteredData] = React.useState(topMovies);
@@ -49,7 +52,6 @@ const MoviesGrid = () => {
     const [dataResult, setDataResult] = React.useState(
         process(filteredData, dataState)
     );
-
 
     const moviesUrl = 'https://api.themoviedb.org/3/movie/';
     const ApiKey = 'api_key=370c9e0ff0179afc2b5f12a30b202de9';
@@ -71,6 +73,7 @@ const MoviesGrid = () => {
             };
 
             const movieData = {
+                id: movie.id,
                 title: movie.original_title,
                 director: director ? director.name : 'Unknown',
                 average_score: movie.vote_average,
@@ -112,7 +115,7 @@ const MoviesGrid = () => {
         });
     }, []);
 
-    const [data, setData] = React.useState(filteredData);
+    const [setData] = React.useState(filteredData);
     const onFilterChange = (ev) => {
         let value = ev.value;
         setFilterValue(ev.value);
@@ -219,10 +222,12 @@ const MoviesGrid = () => {
         collapsedIds: [],
     });
 
+    const [selectAll, setSelectAll] = React.useState(false);
+
     const onHeaderSelectionChange = React.useCallback(
         (event) => {
-            const checkboxElement = event.syntheticEvent.target;
-            const checked = checkboxElement.checked;
+            const checked = !selectAll;
+            setSelectAll(checked);
             const newSelectedState = {};
             topMovies.forEach((item) => {
                 newSelectedState[idGetter(item)] = checked;
@@ -235,7 +240,7 @@ const MoviesGrid = () => {
             const newDataResult = processWithGroups(newData, dataState);
             setDataResult(newDataResult);
         },
-        [data, dataState, idGetter, topMovies]
+        [selectAll, topMovies, idGetter, dataState]
     );
 
     const onSelectionChange = (event) => {
@@ -266,6 +271,8 @@ const MoviesGrid = () => {
         });
         return count;
     };
+
+
     const getNumberOfSelectedItems = (topMovies) => {
         let count = 0;
         topMovies.forEach((item) => {
@@ -319,6 +326,7 @@ const MoviesGrid = () => {
                     size={"small"}
                 >
                     <GridToolbar>
+
                         <Input
                             value={filterValue}
                             onChange={onFilterChange}
@@ -331,6 +339,7 @@ const MoviesGrid = () => {
                             }}
                             placeholder="Search in all columns..."
                         />
+                        <FileUpload />
                         <div className="export-btns-container">
                             <Button onClick={exportExcel}>Export to Excel</Button>
                             <Button onClick={exportPDF}>Export to PDF</Button>
@@ -361,15 +370,17 @@ const MoviesGrid = () => {
                         <Column
                             field="average_score"
                             title="Average Score"
-                            cells={{
-                                data: RatingCell,
-                            }}
+                            cell={(props) => (
+                                <td>
+                                    IMDB: {props.dataItem[props.field].toFixed(1)} <FontAwesomeIcon icon={faStar} color="orange" />
+                                </td>
+                            )}
                             columnMenu={ColumnMenu}
                             width="230px"
                         />
                         <Column
                             field="updated_at"
-                            title="Updated at"
+                            title="Released At"
                             cells={{
                                 data: UpdatedDateCell,
                             }}
@@ -457,15 +468,17 @@ const MoviesGrid = () => {
                         <Column
                             field="average_score"
                             title="Average Score"
-                            cells={{
-                                data: RatingCell,
-                            }}
+                            cell={(props) => (
+                                <td>
+                                    IMDB: {props.dataItem[props.field].toFixed(1)} <FontAwesomeIcon icon={faStar} color="orange" />
+                                </td>
+                            )}
                             columnMenu={ColumnMenu}
                             width="230px"
                         />
                         <Column
                             field="updated_at"
-                            title="Updated at"
+                            title="Released At"
                             cells={{
                                 data: UpdatedDateCell,
                             }}

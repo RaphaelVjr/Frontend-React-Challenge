@@ -1,6 +1,6 @@
 import { render, fireEvent, screen} from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import Login from '../../components/Login/Login'; // replace with your actual path
+import Login from '../../components/Login/Login';
 
 
 

@@ -19,7 +19,7 @@ export const BadgeCell = (props) => {
           <Badge size="small" themeColor="success" cutoutBorder={true}>
             <span>Online</span>
           </Badge>
-        ) : (
+        ) : ( 
           <Badge
             size="small"
             align={{

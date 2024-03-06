@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import TypeWriter from '../../Hooks/useTypingEffect'; // replace with your actual path
+import TypeWriter from '../../Hooks/useTypingEffect';
 
 jest.mock('react-simple-typewriter', () => ({
   useTypewriter: () => ['Hi!'],

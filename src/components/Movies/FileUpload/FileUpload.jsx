@@ -16,6 +16,24 @@ function FileUpload() {
         throw new Error('Response not ok');
       }
       const data = await response.json();
+
+      const sqlStatements = data.map(movie => {
+        const { title, director, created_at, updated_at, average_score } = movie;
+        return `INSERT INTO "movies" ("title", "director", "created_at", "updated_at", "average_score") VALUES ('${title}', '${director}', '${created_at}', '${updated_at}', ${average_score}) RETURNING "id"`;
+      });
+
+      const sqlResponse = await fetch('http://127.0.0.1:3000/execute_sql', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ sqlStatements }),
+      });
+      if (!sqlResponse.ok) {
+        throw new Error('SQL Response not ok');
+      } 
+      const sqlData = await sqlResponse.json();
+      console.log(sqlData);
     } catch (error) {
       console.error('Error:', error);
     }
@@ -26,11 +44,11 @@ function FileUpload() {
   };
 
   return (
-    <form onSubmit={submitFile}>
+    <form method="post" encType="multipart/form-data" onSubmit={submitFile}>
       <input type="file" onChange={handleFileUpload} />
       <button type="submit">Submit</button>
-    </form>
+    </form> 
   );
-}
+} 
 
 export default FileUpload;

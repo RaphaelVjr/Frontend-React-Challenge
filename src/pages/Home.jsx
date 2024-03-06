@@ -1,11 +1,10 @@
 import React from 'react'
 import Login from './../components/Login/Login';
 import SignUp from '../components/Sign/SignUp';
-import { format } from 'date-fns';
 
 const Home = () => {
   return (
-    <div className='authentication'>   
+    <div>   
       <Login />
       <SignUp /></div>
   )
