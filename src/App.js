@@ -13,9 +13,9 @@ function App() {
   return (
     <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/movies" element={<MoviesGrid />} />
+        <Route path="/dashboard" element={<MoviesGrid />} />
         <Route path="/fileUpload" element={<FileUpload />} />
-        <Route path="/movie-card" element={<MovieCard />} />
+        <Route path="/home" element={<MovieCard />} />
         <Route path="/sign" element={<SignUp />} />
         <Route path="*" element={<NotFoundPage />} />
     </Routes>

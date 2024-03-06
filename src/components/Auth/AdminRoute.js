@@ -20,6 +20,6 @@ function ProtectedRoute({ children, ...rest }) {
   );
 }
 
-<ProtectedRoute path="/movies">
+<ProtectedRoute path="/dashboard">
   <MoviesGrid />
 </ProtectedRoute>

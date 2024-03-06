@@ -84,6 +84,9 @@ section {
   border-radius: 16px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
+.carousel .control-arrow, .carousel.carousel-slider .control-arrow {
+  background: black;
+}
 
 .movie-search input {
   height: 50px;
@@ -162,11 +165,12 @@ section {
   align-items: center;
   justify-content: center;
 }
-.logout svg {
-  width: 17px;
-  padding-right: 6rem;
+.Btn svg {
+  width: 28px; 
+  padding-left: 6px;
+
 }
-.logout svg path {
+.Btn svg path {
   fill: white;
 }
 .text {

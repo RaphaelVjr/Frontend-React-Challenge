@@ -43,12 +43,12 @@ function Login() {
             sessionStorage.setItem('role', 'admin');
             toast.success('Logged in as admin');
             setTimeout(() => {
-                window.location.href = '/movies';
+                window.location.href = '/dashboard';
             }, 2000);
         } else {
             toast.success('Login successful');
             setTimeout(() => {
-                window.location.href = '/movie-card';
+                window.location.href = '/home';
             }, 2000);
         }
     } else {
