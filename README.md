@@ -13,7 +13,7 @@ A movie web app that consume an large movies API from TMDB.
 - Admin dashboard to import more movies
 
 
-## Clone repository
+## Clone repostory
 
 Clone repository
 
@@ -139,15 +139,21 @@ To run tests in the repository using Jest you need to:
 ## Demonstração
 
 Home
+   ![image](https://github.com/RaphaelVjr/Frontend-React-Challenge/assets/85368313/2cfe2271-6273-4619-b09b-2af21fb2c205)
 
 
 Login
+![image](https://github.com/RaphaelVjr/Frontend-React-Challenge/assets/85368313/b4110dc4-2dc9-4163-90e5-5f3996b6f0f6)
+
 
 
 Signup
+![image](https://github.com/RaphaelVjr/Frontend-React-Challenge/assets/85368313/b8a3f3e0-0798-4b71-96a6-afd53c5ec289)
 
 
 Dashboard
+![image](https://github.com/RaphaelVjr/Frontend-React-Challenge/assets/85368313/3eec4416-e460-45c9-8716-4f950e8cff90)
+
 
 
 
