@@ -14,10 +14,10 @@ const SignUp = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [setPasswordsMatch] = useState(true);
-  const [passwordConfirmation, setPasswordConfirmation] = useState('false');
+  const [passwordsMatch, setPasswordsMatch] = useState(true);
+  const [passwordConfirmation, setPasswordConfirmation] = useState('');
   const [isValidEmail, setIsValidEmail] = useState(true);
-  const [setIsValidPassword] = useState(true);
+  const [isValidPassword, setIsValidPassword] = useState(true);
 
   const handlePasswordChange = (e) => {
     const newPassword = e.target.value;
@@ -27,7 +27,6 @@ const SignUp = () => {
       setPasswordsMatch(newPassword === passwordConfirmation);
     }
   };
-
 
   const handlePasswordConfirmationChange = (e) => {
     setPasswordConfirmation(e.target.value);
@@ -44,12 +43,12 @@ const SignUp = () => {
       return;
     }
 
-    if (password.length < 8) {
+    if (!isValidPassword) {
       toast.error('Password must be at least 8 characters long');
       return;
     }
 
-    if (password !== passwordConfirmation) {
+    if (!passwordsMatch) {
       toast.error('Passwords do not match');
       return;
     }
