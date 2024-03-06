@@ -13,11 +13,11 @@ A movie web app that consume an large movies API from TMDB.
 - Admin dashboard to import more movies
 
 
-## Clone repostory
+## Clone repository
 
 Clone repository
 
-```http
+```bash
 git clone https://github.com/RaphaelVjr/frontend.git
 ```
 
@@ -55,14 +55,14 @@ Check if this is set for the `.env` file.
 
 After clone the repository, you need to install all dependencies.
 
-```http
+```bash
 npm install
 ```
 
 
 ## CSV Import file
 
-First you need to login as `admin@rotten` password: `admin`, after you'll be redirected to `/movies`, you import the file in the input and submit. After this will load the movies from your csv file, duplicated movies won't be loaded.
+First you need to login as `admin@rotten` password: `admin`, after you'll be redirected to `/dashboard`, you import the file in the input and submit. After this will load the movies from your csv file, duplicated movies won't be loaded.
 ## API Documentation
 
 #### Return top rated movies:
@@ -138,7 +138,23 @@ To run tests in the repository using Jest you need to:
 
 ## Demonstração
 
-Insira um gif ou um link de alguma demonstração
+Home
+   ![image](https://github.com/RaphaelVjr/Frontend-React-Challenge/assets/85368313/2cfe2271-6273-4619-b09b-2af21fb2c205)
+
+
+Login
+![image](https://github.com/RaphaelVjr/Frontend-React-Challenge/assets/85368313/b4110dc4-2dc9-4163-90e5-5f3996b6f0f6)
+
+
+
+Signup
+![image](https://github.com/RaphaelVjr/Frontend-React-Challenge/assets/85368313/b8a3f3e0-0798-4b71-96a6-afd53c5ec289)
+
+
+Dashboard
+![image](https://github.com/RaphaelVjr/Frontend-React-Challenge/assets/85368313/3eec4416-e460-45c9-8716-4f950e8cff90)
+
+
 
 
 ## Kendo License
