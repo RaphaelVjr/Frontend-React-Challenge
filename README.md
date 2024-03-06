@@ -1,70 +1,149 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Kendo Movies Project Job Apply
 
-## Available Scripts
+A movie web app that consume an large movies API from TMDB.
 
-In the project directory, you can run:
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Login Page
+- Sign-up Page
+- Responsivity for mobile in all screens.
+- Movie posters cards
+- Admin dashboard to import more movies
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Clone repostory
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Clone repository
 
-### `npm run build`
+```http
+git clone https://github.com/RaphaelVjr/frontend.git
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Installation Node (Required)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+You need to install:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [Node]
 
-### `npm run eject`
+And set the respective environment variable for your user on windows:
+- Open the Start menu and search for `Environment Variables`.
+- Click on `Environment Variables` in the dialog that appears.
+- In the `System Variables` section, look for the variable named `Path` and edit it.
+- Add the path to your npm installation directory (usually located at C:\Program Files\nodejs).
+- Click `OK` to save the changes.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   [Node]: <https://nodejs.org/en>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    
+## Environment Variables
 
-## Learn More
+Check if this is set for the `.env` file.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+`REACT_APP_API_URL=http://127.0.0.1:3000`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+`HOST=127.0.0.1`
 
-### Code Splitting
+`PORT=3001`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+## Preparing to run project
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+After clone the repository, you need to install all dependencies.
 
-### Making a Progressive Web App
+```http
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+## API Documentation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+#### Return top rated movies:
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```http
+  GET https://api.themoviedb.org/3/movie/
+```
 
-### `npm run build` fails to minify
+| Parâmetro   | Tipo       | Descrição                           |
+| :---------- | :--------- | :---------------------------------- |
+| `ApiKey` | `string` | **Must have**. Authentication key from the tmdb |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Receive a JSON response.
+
+#### Return the credits and crew of a all fetched movies by id:
+
+```http
+  GET https://api.themoviedb.org/3/movie/${movie.id}/credits?${ApiKey}
+```
+
+| Parâmetro   | Tipo       | Descrição                                   |
+| :---------- | :--------- | :------------------------------------------ |
+| `ApiKey`      | `string` | **Must have**. Authentication key from the tmdb |
+
+#### What this api url do?
+
+Receive the director of the movie;
+
+#### Posters image:
+
+```http
+  GET https://image.tmdb.org/t/p/w500${data.results[0].poster_path}
+```
+
+#### What this api url do?
+
+Get the poster of the respective movie with base on the title;
+
+
+## Running Tests
+
+To run tests in the repository using Jest you need to:
+
+```bash
+  npm test
+```
+
+
+## Stacks
+
+**Front-end:** [React], [Kendo UI] (Click to know more).
+
+**Back-end ([Repository]):** Ruby On Rails, Redis and Sidekiq.
+
+
+
+
+[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
+
+   [React]: <https://nodejs.org/en>
+   [Kendo UI]: <https://www.telerik.com/kendo-react-ui/components/getting-started/>
+   [Repository]: <https://github.com/RaphaelVjr/Ruby-Backend-Project>
+
+## Melhorias
+
+Que melhorias você fez no seu código? Ex: refatorações, melhorias de performance, acessibilidade, etc
+
+## Color Documentation
+
+| Cor               | Hexadecimal                                                |
+| ----------------- | ---------------------------------------------------------------- |
+| Primary Color       | ![#FDFDFD](https://via.placeholder.com/10/FDFDFD?text=+) #FDFDFD |
+| Secondary Color       | ![#EAEAEA](https://via.placeholder.com/10/EAEAEA?text=+) #EAEAEA |
+| Make color       | ![#015ABA](https://via.placeholder.com/10/015ABA?text=+) #015ABA |
+| Inputs | ![#797979](https://via.placeholder.com/10/#797979?text=+) #797979|
+
+
+## Demonstração
+
+Insira um gif ou um link de alguma demonstração
+
+
+## Kendo License
+
+[Kendo UI](https://choosealicense.com/licenses/mit/)
+
