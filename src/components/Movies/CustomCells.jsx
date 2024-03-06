@@ -37,14 +37,6 @@ export const BadgeCell = (props) => {
   );
 };
 
-export const UpdatedDateCell = (props) => {
-  const { dataItem } = props;
-  if (dataItem && dataItem.updated_at !== undefined) {
-    const date = (dataItem.updated_at);
-    const formattedDate = format(date, 'yyyy-MM-dd');
-    return <td {...props.tdProps}>{formattedDate}</td>;
-  }
-};
 
 export const CreatedDateCell = (props) => {
   const { dataItem } = props;

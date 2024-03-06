@@ -7,7 +7,6 @@ import { GridPDFExport } from "@progress/kendo-react-pdf";
 import { ExcelExport } from "@progress/kendo-react-excel-export";
 import { Button } from "@progress/kendo-react-buttons";
 import {
-    UpdatedDateCell,
     CreatedDateCell,
     ColumnMenu,
 } from "../components/Movies/CustomCells";
@@ -83,7 +82,7 @@ const MoviesGrid = () => {
 
             function formatDate(date) {
                 const year = date.getFullYear();
-                const month = (date.getMonth() + 1).toString().padStart(2, '0'); // months are 0-indexed in JavaScript
+                const month = (date.getMonth() + 1).toString().padStart(2, '0');
                 const day = date.getDate().toString().padStart(2, '0');
                 const hours = date.getHours().toString().padStart(2, '0');
                 const minutes = date.getMinutes().toString().padStart(2, '0');
@@ -399,9 +398,6 @@ const MoviesGrid = () => {
                         <Column
                             field="updated_at"
                             title="Updated at"
-                            cells={{
-                                data: UpdatedDateCell,
-                            }}
                             columnMenu={ColumnMenu}
                             width="250px"
                         />
@@ -486,22 +482,19 @@ const MoviesGrid = () => {
                             width="230px"
                         />
                         <Column
-                            field="updated_at"
-                            title="Released At"
-                            cells={{
-                                data: UpdatedDateCell,
-                            }}
-                            columnMenu={ColumnMenu}
-                            width="250px"
-                        />
-                        <Column
                             field="created_at"
-                            title="Created At"
+                            title="Release"
                             columnMenu={ColumnMenu}
                             cells={{
                                 data: CreatedDateCell,
                             }}
                             width="230px"
+                        />
+                        <Column
+                            field="updated_at"
+                            title="Updated at"
+                            columnMenu={ColumnMenu}
+                            width="250px"
                         />
                     </Column>
                 </Grid>
