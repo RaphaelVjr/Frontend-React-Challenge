@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import './MovieCard.css';
+import { toast } from 'react-toastify';
 
 const ApiKey = 'api_key=370c9e0ff0179afc2b5f12a30b202de9';
 
@@ -25,18 +26,31 @@ const MovieCard = ({ movie }) => {
 
 const getMoviePosters = async (movies) => {
   const posters = {}
+  
+  const fetchPromises = movies.map(movie => 
+    fetch(`https://api.themoviedb.org/3/search/movie?${ApiKey}&query=${encodeURIComponent(movie.title)}`)
+      .then(res => res.json())
+      .then(data => {
+        if (data.results.length > 0) {
+          posters[movie.title] = data.results[0].poster_path ? `https://image.tmdb.org/t/p/w500${data.results[0].poster_path}` : 'N/A';
+        } else {
+          posters[movie.title] = 'N/A';
+        }
+      })
+      .catch(error => {
+        if (error.message === 'Failed to fetch') {
+          toast.error('Backend server is not running. Please start the server and try again.', {
+            position: toast.POSITION.TOP_CENTER
+          });
+          posters[movie.title] = 'N/A';
+        } else {
+          console.error('An unexpected error occurred:', error);
+        }
+      })
+  );
 
-  for (let movie of movies) {
-    const res = await fetch(`https://api.themoviedb.org/3/search/movie?${ApiKey}&query=${encodeURIComponent(movie.title)}`);
-    const data = await res.json();
 
-    if (data.results.length > 0) {
-      // Use the poster of the first matching movie
-      posters[movie.title] = data.results[0].poster_path ? `https://image.tmdb.org/t/p/w500${data.results[0].poster_path}` : 'N/A';
-    } else {
-      posters[movie.title] = 'N/A';
-    }
-  }
+  await Promise.all(fetchPromises);
 
   return posters;
 };

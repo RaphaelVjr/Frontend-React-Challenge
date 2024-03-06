@@ -27,8 +27,6 @@ function Login() {
     const response = await fetch('http://127.0.0.1:3000/login', {
         method: 'POST',
         headers: {
-            'Accept-Language': 'pt-BR',
-            'Accept-Encoding': 'gzip, deflate, br',
             'Content-Type': 'application/json',
             Accept: 'application/json',
         },
