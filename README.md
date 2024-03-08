@@ -1,7 +1,7 @@
 
 # Kendo Movies Project Job Apply
 
-A movie web app that consume an large movies API from TMDB.
+A movie web app that consume an large movies API from TMDB. Login: admin@rotten, password: admin (must be used to access dashboard). Normal login access the /home.
 
 
 ## Features
