@@ -117,14 +117,13 @@ const MoviesGrid = () => {
 
 
     const handleFileUpload = () => {
-        // Add a delay of 6 seconds before fetching the movies
         setTimeout(() => {
             getMoviesFromDatabase().then(movies => {
                 setTopMovies(movies);
                 setFilteredData(movies);
                 setFileUploaded(true);
             });
-        }, 6000);  // 6000 milliseconds = 6 seconds
+        }, 6000); 
     };
 
 
