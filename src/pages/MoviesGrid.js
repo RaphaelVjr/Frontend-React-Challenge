@@ -117,11 +117,14 @@ const MoviesGrid = () => {
 
 
     const handleFileUpload = () => {
-        getMoviesFromDatabase().then(movies => {
-            setTopMovies(movies);
-            setFilteredData(movies);
-            setFileUploaded(true); 
-        });
+        // Add a delay of 6 seconds before fetching the movies
+        setTimeout(() => {
+            getMoviesFromDatabase().then(movies => {
+                setTopMovies(movies);
+                setFilteredData(movies);
+                setFileUploaded(true);
+            });
+        }, 6000);  // 6000 milliseconds = 6 seconds
     };
 
 
@@ -131,7 +134,7 @@ const MoviesGrid = () => {
             setTopMovies(movies);
             setFilteredData(movies);
 
-       
+
             const topRatedUrl = `${moviesUrl}top_rated?${ApiKey}`;
             getTopRatedMovies(topRatedUrl).then(topRatedMovies => {
                 const newMovies = topRatedMovies.filter(topRatedMovie =>
@@ -371,7 +374,7 @@ const MoviesGrid = () => {
                             }}
                             placeholder="Search in all columns..."
                         />
-                        <FileUpload topMovies={topMovies} setFilteredData={setFilteredData} setTopMovies={setTopMovies} getMoviesFromDatabase={getMoviesFromDatabase} />
+                        <FileUpload topMovies={topMovies} setFilteredData={setFilteredData} setTopMovies={setTopMovies} />
                         <div className="export-btns-container">
                             <Button onClick={exportExcel}>Export to Excel</Button>
                             <Button onClick={exportPDF}>Export to PDF</Button>
@@ -404,7 +407,7 @@ const MoviesGrid = () => {
                             title="Average Score"
                             cell={(props) => (
                                 <td>
-                                    IMDB: {props.dataItem[props.field].toFixed(1)} <FontAwesomeIcon icon={faStar} color="orange" />
+                                    IMDB: {typeof props.dataItem[props.field] === 'number' ? props.dataItem[props.field].toFixed(1) : props.dataItem[props.field]} <FontAwesomeIcon icon={faStar} color="orange" />
                                 </td>
                             )}
                             columnMenu={ColumnMenu}
@@ -502,7 +505,7 @@ const MoviesGrid = () => {
                             title="Average Score"
                             cell={(props) => (
                                 <td>
-                                    IMDB: {props.dataItem[props.field].toFixed(1)} <FontAwesomeIcon icon={faStar} color="orange" />
+                                    IMDB: {typeof props.dataItem[props.field] === 'number' ? props.dataItem[props.field].toFixed(1) : props.dataItem[props.field]} <FontAwesomeIcon icon={faStar} color="orange" />
                                 </td>
                             )}
                             columnMenu={ColumnMenu}
@@ -510,7 +513,7 @@ const MoviesGrid = () => {
                         />
                         <Column
                             field="created_at"
-                            title="Release"
+                            title="Release at"
                             columnMenu={ColumnMenu}
                             cells={{
                                 data: CreatedDateCell,

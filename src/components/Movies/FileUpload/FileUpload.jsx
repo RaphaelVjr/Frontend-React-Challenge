@@ -21,7 +21,7 @@ const validateFile = (file) => {
   return null;
 };
 
-function FileUpload({ topMovies, getMoviesFromDatabase, setTopMovies, setFilteredData }) {
+function FileUpload({ topMovies, setTopMovies, setFilteredData }) {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -98,7 +98,6 @@ function FileUpload({ topMovies, getMoviesFromDatabase, setTopMovies, setFiltere
 
         if (response.ok) {
           toast.success("Movies imported successfully");
-          const movies = await getMoviesFromDatabase();
           setTopMovies(movies);
           setFilteredData(movies);
         } else {
