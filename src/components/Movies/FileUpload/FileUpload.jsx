@@ -3,6 +3,7 @@ import Papa from 'papaparse';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 import 'react-toastify/dist/ReactToastify.css';
+import getMoviesFromDatabase from '../../Movies/FileUpload/api'
 
 
 const validateFile = (file) => {
@@ -98,12 +99,17 @@ function FileUpload({ topMovies, setTopMovies, setFilteredData }) {
 
         if (response.ok) {
           toast.success("Movies imported successfully");
-          setTopMovies(movies);
-          setFilteredData(movies);
-        } else {
+          setTimeout(async () => {
+              const movies = await getMoviesFromDatabase();
+              setTopMovies(movies);
+              setFilteredData(movies);
+          }, 2000);  // Add a delay of 2 seconds
+      } else {
           throw new Error('Error importing movies');
-        }
-      };
+      }
+    };
+
+
       reader.readAsText(file);
     } catch (error) {
       console.error('Error:', error);

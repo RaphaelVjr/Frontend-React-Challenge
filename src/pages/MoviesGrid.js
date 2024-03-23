@@ -28,6 +28,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import FileUpload from "../components/Movies/FileUpload/FileUpload";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
+import getMoviesFromDatabase from '../components/Movies/FileUpload/api'
 
 const DATA_ITEM_KEY = "id";
 const SELECTED_FIELD = "selected";
@@ -95,27 +96,6 @@ const MoviesGrid = () => {
         }
     };
 
-    const getMoviesFromDatabase = async () => {
-        try {
-            const res = await fetch('http://127.0.0.1:3000/movies', {
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
-
-            if (!res.ok) {
-                toast.error('Network response was not ok');
-            }
-
-            const data = await res.json();
-            return data;
-        } catch (error) {
-            toast.error("API offline");
-            return [];
-        }
-    };
-
-
     const handleFileUpload = () => {
         setTimeout(() => {
             getMoviesFromDatabase().then(movies => {
@@ -123,7 +103,7 @@ const MoviesGrid = () => {
                 setFilteredData(movies);
                 setFileUploaded(true);
             });
-        }, 6000); 
+        }, 9000); 
     };
 
 
@@ -144,7 +124,7 @@ const MoviesGrid = () => {
             });
         });
 
-        if (fileUploaded) { // Only call handleFileUpload if a file has been uploaded
+        if (fileUploaded) { 
             handleFileUpload();
         }
     }, [fileUploaded]);
