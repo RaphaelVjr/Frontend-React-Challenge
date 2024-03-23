@@ -37,7 +37,11 @@
     "react-scripts": "^5.0.1",
     "react-simple-typewriter": "^5.0.1",
     "react-toastify": "^10.0.4",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "nth-check": "2.0.1",
+    "webpack-dev-middleware": "5.3.4",
+    "postcss": "8.4.31",
+    "follow-redirects": "1.15.6"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -57,15 +61,12 @@
       "last 1 safari version"
     ]
   },
-  
   "devDependencies": {
-    "jest": "^27.5.1",
-    "react-test-renderer": "^18.2.0"
-  },
-  "resolutions": {
     "nth-check": "2.0.1",
     "webpack-dev-middleware": "5.3.4",
     "postcss": "8.4.31",
-    "follow-redirects": "1.15.6"
+    "follow-redirects": "1.15.6",
+    "jest": "^27.5.1",
+    "react-test-renderer": "^18.2.0"
   }
 }
