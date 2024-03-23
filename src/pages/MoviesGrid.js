@@ -9,6 +9,7 @@ import { Button } from "@progress/kendo-react-buttons";
 import {
     CreatedDateCell,
     ColumnMenu,
+    UpdateddDateCell,
 } from "../components/Movies/CustomCells";
 import {
     Grid,
@@ -21,7 +22,9 @@ import {
     setExpandedState,
 } from "@progress/kendo-react-data-tools";
 import "../components/Movies/style.css";
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
+import 'react-toastify/dist/ReactToastify.css';
 import FileUpload from "../components/Movies/FileUpload/FileUpload";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
@@ -46,6 +49,7 @@ const MoviesGrid = () => {
     const [filterValue, setFilterValue] = React.useState();
     const [topMovies, setTopMovies] = React.useState([])
     const [filteredData, setFilteredData] = React.useState(topMovies);
+    const [fileUploaded, setFileUploaded] = React.useState(false);
     const [currentSelectedState, setCurrentSelectedState] = React.useState({});
     const [dataState, setDataState] = React.useState(initialDataState);
     const [dataResult, setDataResult] = React.useState(
@@ -54,76 +58,95 @@ const MoviesGrid = () => {
 
     const moviesUrl = 'https://api.themoviedb.org/3/movie/';
     const ApiKey = 'api_key=370c9e0ff0179afc2b5f12a30b202de9';
-
     const getTopRatedMovies = async (moviesUrl) => {
-        const res = await fetch(moviesUrl);
-        const data = await res.json();
+        try {
+            const res = await fetch(moviesUrl);
+            const data = await res.json();
 
-        const movies = await Promise.all(data.results.map(async (movie) => {
-            const creditsRes = await fetch(`https://api.themoviedb.org/3/movie/${movie.id}/credits?${ApiKey}`);
-            const creditsData = await creditsRes.json();
-            const director = creditsData.crew.find(person => person.job === 'Director');
+            const movies = await Promise.all(data.results.map(async (movie) => {
+                const creditsRes = await fetch(`https://api.themoviedb.org/3/movie/${movie.id}/credits?${ApiKey}`);
+                const creditsData = await creditsRes.json();
+                const director = creditsData.crew.find(person => person.job === 'Director');
 
+                const movieData = {
+                    id: movie.id,
+                    title: movie.original_title,
+                    director: director ? director.name : 'Unknown',
+                    average_score: movie.vote_average,
+                    updated_at: formatDate(new Date()),
+                    created_at: movie.release_date,
+                };
 
-            const movieExists = async (title) => {
-                const response = await fetch(`http://127.0.0.1:3000/movies/exists?title=${encodeURIComponent(title)}`);
-                const data = await response.json();
-                return data.exists;
-            };
-
-            const movieData = {
-                id: movie.id,
-                title: movie.original_title,
-                director: director ? director.name : 'Unknown',
-                average_score: movie.vote_average,
-                updated_at: formatDate(new Date()),
-                created_at: movie.release_date,
-            };
-
-            function formatDate(date) {
-                const year = date.getFullYear();
-                const month = (date.getMonth() + 1).toString().padStart(2, '0');
-                const day = date.getDate().toString().padStart(2, '0');
-                const hours = date.getHours().toString().padStart(2, '0');
-                const minutes = date.getMinutes().toString().padStart(2, '0');
-                return `${year}-${month}-${day} ${hours}:${minutes}`;
-            }
-
-            if (!await movieExists(movieData.title)) {
-                const response = await fetch('http://127.0.0.1:3000/movies', {
-                    method: 'POST',
-                    headers: {
-                        'Access-Control-Allow-Origin': '*',
-                        'Accept-Language': 'pt-BR',
-                        'Accept-Encoding': 'gzip, deflate, br',
-                        'Content-Type': 'application/json',
-                        Accept: 'application/json',
-                    },
-                    credentials: 'include',
-                    body: JSON.stringify({ movie: movieData }),
-                });
-
-                if (!response.ok) {
-                    toast.error('Error creating movie');
+                function formatDate(date) {
+                    const year = date.getFullYear();
+                    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+                    const day = date.getDate().toString().padStart(2, '0');
+                    const hours = date.getHours().toString().padStart(2, '0');
+                    const minutes = date.getMinutes().toString().padStart(2, '0');
+                    return `${year}-${month}-${day} ${hours}:${minutes}`;
                 }
-            } else {
-                toast.error('Movie already exists');
-            }
-            return movieData;
-        }));
 
-        return movies;
+                return movieData;
+            }));
+
+            return movies;
+        } catch (error) {
+            toast.error("API tmdb error");
+        }
     };
 
-    React.useEffect(() => {
-        const topRatedUrl = `${moviesUrl}top_rated?${ApiKey}`;
-        getTopRatedMovies(topRatedUrl).then(movies => {
+    const getMoviesFromDatabase = async () => {
+        try {
+            const res = await fetch('http://127.0.0.1:3000/movies', {
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (!res.ok) {
+                toast.error('Network response was not ok');
+            }
+
+            const data = await res.json();
+            return data;
+        } catch (error) {
+            toast.error("API offline");
+            return [];
+        }
+    };
+
+
+    const handleFileUpload = () => {
+        getMoviesFromDatabase().then(movies => {
             setTopMovies(movies);
             setFilteredData(movies);
+            setFileUploaded(true); 
         });
-    }, []);
+    };
 
-    const [setData] = React.useState(filteredData);
+
+    React.useEffect(() => {
+
+        getMoviesFromDatabase().then(movies => {
+            setTopMovies(movies);
+            setFilteredData(movies);
+
+       
+            const topRatedUrl = `${moviesUrl}top_rated?${ApiKey}`;
+            getTopRatedMovies(topRatedUrl).then(topRatedMovies => {
+                const newMovies = topRatedMovies.filter(topRatedMovie =>
+                    !movies.some(movie => movie.title === topRatedMovie.title)
+                );
+                setTopMovies(prevMovies => [...prevMovies, ...newMovies]);
+                setFilteredData(prevData => [...prevData, ...newMovies]);
+            });
+        });
+
+        if (fileUploaded) { // Only call handleFileUpload if a file has been uploaded
+            handleFileUpload();
+        }
+    }, [fileUploaded]);
+
     const onFilterChange = (ev) => {
         let value = ev.value;
         setFilterValue(ev.value);
@@ -160,7 +183,7 @@ const MoviesGrid = () => {
         }));
         setDataResult(processedData);
         setDataState(clearedPagerDataState);
-        setData(newData);
+
     };
     const [resultState] = React.useState(
         processWithGroups(
@@ -306,6 +329,7 @@ const MoviesGrid = () => {
     };
     return (
         <div>
+            <ToastContainer />
             <ExcelExport
                 data={topMovies}
                 ref={(exporter) => {
@@ -347,7 +371,7 @@ const MoviesGrid = () => {
                             }}
                             placeholder="Search in all columns..."
                         />
-                        <FileUpload />
+                        <FileUpload topMovies={topMovies} setFilteredData={setFilteredData} setTopMovies={setTopMovies} getMoviesFromDatabase={getMoviesFromDatabase} />
                         <div className="export-btns-container">
                             <Button onClick={exportExcel}>Export to Excel</Button>
                             <Button onClick={exportPDF}>Export to PDF</Button>
@@ -399,6 +423,9 @@ const MoviesGrid = () => {
                             field="updated_at"
                             title="Updated at"
                             columnMenu={ColumnMenu}
+                            cells={{
+                                data: UpdateddDateCell,
+                            }}
                             width="250px"
                         />
                     </Column>
@@ -494,6 +521,9 @@ const MoviesGrid = () => {
                             field="updated_at"
                             title="Updated at"
                             columnMenu={ColumnMenu}
+                            cells={{
+                                data: UpdateddDateCell,
+                            }}
                             width="250px"
                         />
                     </Column>

@@ -1,0 +1,1395 @@
+[
+    {
+        "id": 135397,
+        "title": "Jurassic World",
+        "director": "Colin Trevorrow",
+        "created_at": "2015-06-09",
+        "average_score": 6.5
+    },
+    {
+        "id": 76341,
+        "title": "Mad Max: Fury Road",
+        "director": "George Miller",
+        "created_at": "2015-05-13",
+        "average_score": 7.1
+    },
+    {
+        "id": 262500,
+        "title": "Insurgent",
+        "director": "Robert Schwentke",
+        "created_at": "2015-03-18",
+        "average_score": 6.3
+    },
+    {
+        "id": 140607,
+        "title": "Star Wars: The Force Awakens",
+        "director": "J.J. Abrams",
+        "created_at": "2015-12-15",
+        "average_score": 7.5
+    },
+    {
+        "id": 168259,
+        "title": "Furious 7",
+        "director": "James Wan",
+        "created_at": "2015-04-01",
+        "average_score": 7.3
+    },
+    {
+        "id": 281957,
+        "title": "The Revenant",
+        "director": "Alejandro GonzÃ¡lez IÃ±Ã¡rritu",
+        "created_at": "2015-12-25",
+        "average_score": 7.2
+    },
+    {
+        "id": 87101,
+        "title": "Terminator Genisys",
+        "director": "Alan Taylor",
+        "created_at": "2015-06-23",
+        "average_score": 5.8
+    },
+    {
+        "id": 286217,
+        "title": "The Martian",
+        "director": "Ridley Scott",
+        "created_at": "2015-09-30",
+        "average_score": 7.6
+    },
+    {
+        "id": 211672,
+        "title": "Minions",
+        "director": "Kyle Balda|Pierre Coffin",
+        "created_at": "2015-06-17",
+        "average_score": 6.5
+    },
+    {
+        "id": 150540,
+        "title": "Inside Out",
+        "director": "Pete Docter",
+        "created_at": "2015-06-09",
+        "average_score": 8
+    },
+    {
+        "id": 206647,
+        "title": "Spectre",
+        "director": "Sam Mendes",
+        "created_at": "2015-10-26",
+        "average_score": 6.2
+    },
+    {
+        "id": 76757,
+        "title": "Jupiter Ascending",
+        "director": "Lana Wachowski|Lilly Wachowski",
+        "created_at": "2015-02-04",
+        "average_score": 5.2
+    },
+    {
+        "id": 264660,
+        "title": "Ex Machina",
+        "director": "Alex Garland",
+        "created_at": "2015-01-21",
+        "average_score": 7.6
+    },
+    {
+        "id": 257344,
+        "title": "Pixels",
+        "director": "Chris Columbus",
+        "created_at": "2015-07-16",
+        "average_score": 5.8
+    },
+    {
+        "id": 99861,
+        "title": "Avengers: Age of Ultron",
+        "director": "Joss Whedon",
+        "created_at": "2015-04-22",
+        "average_score": 7.4
+    },
+    {
+        "id": 273248,
+        "title": "The Hateful Eight",
+        "director": "Quentin Tarantino",
+        "created_at": "2015-12-25",
+        "average_score": 7.4
+    },
+    {
+        "id": 260346,
+        "title": "Taken 3",
+        "director": "Olivier Megaton",
+        "created_at": "2015-01-01",
+        "average_score": 6.1
+    },
+    {
+        "id": 102899,
+        "title": "Ant-Man",
+        "director": "Peyton Reed",
+        "created_at": "2015-07-14",
+        "average_score": 7
+    },
+    {
+        "id": 150689,
+        "title": "Cinderella",
+        "director": "Kenneth Branagh",
+        "created_at": "2015-03-12",
+        "average_score": 6.8
+    },
+    {
+        "id": 131634,
+        "title": "The Hunger Games: Mockingjay - Part 2",
+        "director": "Francis Lawrence",
+        "created_at": "2015-11-18",
+        "average_score": 6.5
+    },
+    {
+        "id": 158852,
+        "title": "Tomorrowland",
+        "director": "Brad Bird",
+        "created_at": "2015-05-19",
+        "average_score": 6.2
+    },
+    {
+        "id": 307081,
+        "title": "Southpaw",
+        "director": "Antoine Fuqua",
+        "created_at": "2015-06-15",
+        "average_score": 7.3
+    },
+    {
+        "id": 254128,
+        "title": "San Andreas",
+        "director": "Brad Peyton",
+        "created_at": "2015-05-27",
+        "average_score": 6.1
+    },
+    {
+        "id": 216015,
+        "title": "Fifty Shades of Grey",
+        "director": "Sam Taylor-Johnson",
+        "created_at": "2015-02-11",
+        "average_score": 5.3
+    },
+    {
+        "id": 318846,
+        "title": "The Big Short",
+        "director": "Adam McKay",
+        "created_at": "2015-12-11",
+        "average_score": 7.3
+    },
+    {
+        "id": 177677,
+        "title": "Mission: Impossible - Rogue Nation",
+        "director": "Christopher McQuarrie",
+        "created_at": "2015-07-23",
+        "average_score": 7.1
+    },
+    {
+        "id": 214756,
+        "title": "Ted 2",
+        "director": "Seth MacFarlane",
+        "created_at": "2015-06-25",
+        "average_score": 6.3
+    },
+    {
+        "id": 207703,
+        "title": "Kingsman: The Secret Service",
+        "director": "Matthew Vaughn",
+        "created_at": "2015-01-24",
+        "average_score": 7.6
+    },
+    {
+        "id": 314365,
+        "title": "Spotlight",
+        "director": "Tom McCarthy",
+        "created_at": "2015-11-06",
+        "average_score": 7.8
+    },
+    {
+        "id": 294254,
+        "title": "Maze Runner: The Scorch Trials",
+        "director": "Wes Ball",
+        "created_at": "2015-09-09",
+        "average_score": 6.4
+    },
+    {
+        "id": 280996,
+        "title": "Mr. Holmes",
+        "director": "Bill Condon",
+        "created_at": "2015-06-19",
+        "average_score": 6.4
+    },
+    {
+        "id": 198184,
+        "title": "Chappie",
+        "director": "Neill Blomkamp",
+        "created_at": "2015-03-04",
+        "average_score": 6.6
+    },
+    {
+        "id": 254470,
+        "title": "Pitch Perfect 2",
+        "director": "Elizabeth Banks",
+        "created_at": "2015-05-07",
+        "average_score": 6.8
+    },
+    {
+        "id": 296098,
+        "title": "Bridge of Spies",
+        "director": "Steven Spielberg",
+        "created_at": "2015-10-15",
+        "average_score": 7.1
+    },
+    {
+        "id": 257445,
+        "title": "Goosebumps",
+        "director": "Rob Letterman",
+        "created_at": "2015-08-05",
+        "average_score": 6.2
+    },
+    {
+        "id": 264644,
+        "title": "Room",
+        "director": "Lenny Abrahamson",
+        "created_at": "2015-10-16",
+        "average_score": 8
+    },
+    {
+        "id": 339527,
+        "title": "Solace",
+        "director": "Afonso Poyart",
+        "created_at": "2015-09-03",
+        "average_score": 6.2
+    },
+    {
+        "id": 105864,
+        "title": "The Good Dinosaur",
+        "director": "Peter Sohn",
+        "created_at": "2015-11-14",
+        "average_score": 6.6
+    },
+    {
+        "id": 241554,
+        "title": "Run All Night",
+        "director": "Jaume Collet-Serra",
+        "created_at": "2015-03-11",
+        "average_score": 6.3
+    },
+    {
+        "id": 167073,
+        "title": "Brooklyn",
+        "director": "John Crowley",
+        "created_at": "2015-11-04",
+        "average_score": 7.3
+    },
+    {
+        "id": 277216,
+        "title": "Straight Outta Compton",
+        "director": "F. Gary Gray",
+        "created_at": "2015-08-13",
+        "average_score": 7.7
+    },
+    {
+        "id": 274854,
+        "title": "The Last Witch Hunter",
+        "director": "Breck Eisner",
+        "created_at": "2015-10-21",
+        "average_score": 5.6
+    },
+    {
+        "id": 321697,
+        "title": "Steve Jobs",
+        "director": "Danny Boyle",
+        "created_at": "2015-10-09",
+        "average_score": 6.9
+    },
+    {
+        "id": 203801,
+        "title": "The Man from U.N.C.L.E.",
+        "director": "Guy Ritchie",
+        "created_at": "2015-08-13",
+        "average_score": 7
+    },
+    {
+        "id": 293863,
+        "title": "The Age of Adaline",
+        "director": "Lee Toland Krieger",
+        "created_at": "2015-04-16",
+        "average_score": 7.3
+    },
+    {
+        "id": 325348,
+        "title": "Hardcore Henry",
+        "director": "Ilya Naishuller",
+        "created_at": "2015-09-12",
+        "average_score": 5.9
+    },
+    {
+        "id": 228161,
+        "title": "Home",
+        "director": "Tim Johnson",
+        "created_at": "2015-03-18",
+        "average_score": 6.9
+    },
+    {
+        "id": 286565,
+        "title": "Paper Towns",
+        "director": "Jake Schreier",
+        "created_at": "2015-07-09",
+        "average_score": 6.2
+    },
+    {
+        "id": 265208,
+        "title": "Wild Card",
+        "director": "Simon West",
+        "created_at": "2015-01-14",
+        "average_score": 5.3
+    },
+    {
+        "id": 254320,
+        "title": "The Lobster",
+        "director": "Yorgos Lanthimos",
+        "created_at": "2015-10-08",
+        "average_score": 6.6
+    },
+    {
+        "id": 258480,
+        "title": "Carol",
+        "director": "Todd Haynes",
+        "created_at": "2015-11-20",
+        "average_score": 7.1
+    },
+    {
+        "id": 257211,
+        "title": "The Intern",
+        "director": "Nancy Meyers",
+        "created_at": "2015-09-24",
+        "average_score": 7.1
+    },
+    {
+        "id": 253412,
+        "title": "Everest",
+        "director": "Baltasar KormÃ¡kur",
+        "created_at": "2015-09-10",
+        "average_score": 6.7
+    },
+    {
+        "id": 274479,
+        "title": "Joy",
+        "director": "David O. Russell",
+        "created_at": "2015-12-24",
+        "average_score": 6.4
+    },
+    {
+        "id": 257088,
+        "title": "Point Break",
+        "director": "Ericson Core",
+        "created_at": "2015-12-03",
+        "average_score": 5.5
+    },
+    {
+        "id": 295964,
+        "title": "Burnt",
+        "director": "John Wells",
+        "created_at": "2015-10-02",
+        "average_score": 6.3
+    },
+    {
+        "id": 238615,
+        "title": "Self/less",
+        "director": "Tarsem Singh",
+        "created_at": "2015-07-10",
+        "average_score": 6.2
+    },
+    {
+        "id": 210860,
+        "title": "Mortdecai",
+        "director": "David Koepp",
+        "created_at": "2015-01-21",
+        "average_score": 5.3
+    },
+    {
+        "id": 306819,
+        "title": "The Danish Girl",
+        "director": "Tom Hooper",
+        "created_at": "2015-11-27",
+        "average_score": 7.3
+    },
+    {
+        "id": 201088,
+        "title": "Blackhat",
+        "director": "Michael Mann",
+        "created_at": "2015-01-13",
+        "average_score": 5
+    },
+    {
+        "id": 273481,
+        "title": "Sicario",
+        "director": "Denis Villeneuve",
+        "created_at": "2015-09-17",
+        "average_score": 7.1
+    },
+    {
+        "id": 166424,
+        "title": "Fantastic Four",
+        "director": "Josh Trank",
+        "created_at": "2015-08-05",
+        "average_score": 4.4
+    },
+    {
+        "id": 310131,
+        "title": "The Witch",
+        "director": "Robert Eggers",
+        "created_at": "2015-03-24",
+        "average_score": 5.8
+    },
+    {
+        "id": 238713,
+        "title": "Spy",
+        "director": "Paul Feig",
+        "created_at": "2015-05-06",
+        "average_score": 6.9
+    },
+    {
+        "id": 256591,
+        "title": "Focus",
+        "director": "Glenn Ficarra|John Requa",
+        "created_at": "2015-02-25",
+        "average_score": 6.7
+    },
+    {
+        "id": 249070,
+        "title": "Hitman: Agent 47",
+        "director": "Aleksander Bach",
+        "created_at": "2015-08-20",
+        "average_score": 5.5
+    },
+    {
+        "id": 205775,
+        "title": "In the Heart of the Sea",
+        "director": "Ron Howard",
+        "created_at": "2015-11-20",
+        "average_score": 6.4
+    },
+    {
+        "id": 334074,
+        "title": "Survivor",
+        "director": "James McTeigue",
+        "created_at": "2015-05-21",
+        "average_score": 5.4
+    },
+    {
+        "id": 312221,
+        "title": "Creed",
+        "director": "Ryan Coogler",
+        "created_at": "2015-11-25",
+        "average_score": 7.3
+    },
+    {
+        "id": 271718,
+        "title": "Trainwreck",
+        "director": "Judd Apatow",
+        "created_at": "2015-07-17",
+        "average_score": 6.1
+    },
+    {
+        "id": 333352,
+        "title": "Eye in the Sky",
+        "director": "Gavin Hood",
+        "created_at": "2015-09-11",
+        "average_score": 7.2
+    },
+    {
+        "id": 276907,
+        "title": "Legend",
+        "director": "Brian Helgeland",
+        "created_at": "2015-09-09",
+        "average_score": 6.7
+    },
+    {
+        "id": 284289,
+        "title": "Beyond the Reach",
+        "director": "Jean-Baptiste LÃ©onetti",
+        "created_at": "2015-04-17",
+        "average_score": 5.5
+    },
+    {
+        "id": 266647,
+        "title": "Pan",
+        "director": "Joe Wright",
+        "created_at": "2015-09-24",
+        "average_score": 5.9
+    },
+    {
+        "id": 347096,
+        "title": "Mythica: The Darkspore",
+        "director": "Anne K. Black",
+        "created_at": "2015-06-24",
+        "average_score": 5.1
+    },
+    {
+        "id": 308369,
+        "title": "Me and Earl and the Dying Girl",
+        "director": "Alfonso Gomez-Rejon",
+        "created_at": "2015-06-12",
+        "average_score": 7.7
+    },
+    {
+        "id": 227973,
+        "title": "The Peanuts Movie",
+        "director": "Steve Martino",
+        "created_at": "2015-11-05",
+        "average_score": 6.4
+    },
+    {
+        "id": 321741,
+        "title": "Concussion",
+        "director": "Peter Landesman",
+        "created_at": "2015-11-12",
+        "average_score": 6.9
+    },
+    {
+        "id": 296100,
+        "title": "The Night Before",
+        "director": "Jonathan Levine",
+        "created_at": "2015-11-20",
+        "average_score": 6.1
+    },
+    {
+        "id": 263472,
+        "title": "Knock Knock",
+        "director": "Eli Roth",
+        "created_at": "2015-06-26",
+        "average_score": 4.8
+    },
+    {
+        "id": 228205,
+        "title": "The Longest Ride",
+        "director": "George Tillman, Jr.",
+        "created_at": "2015-04-09",
+        "average_score": 7.3
+    },
+    {
+        "id": 159824,
+        "title": "Hotel Transylvania 2",
+        "director": "Genndy Tartakovsky",
+        "created_at": "2015-09-21",
+        "average_score": 6.8
+    },
+    {
+        "id": 333348,
+        "title": "Love the Coopers",
+        "director": "Jessie Nelson",
+        "created_at": "2015-11-12",
+        "average_score": 5.3
+    },
+    {
+        "id": 285783,
+        "title": "The Walk",
+        "director": "Robert Zemeckis",
+        "created_at": "2015-09-30",
+        "average_score": 6.8
+    },
+    {
+        "id": 290764,
+        "title": "Tracers",
+        "director": "Daniel Benmayor",
+        "created_at": "2015-01-15",
+        "average_score": 5.9
+    },
+    {
+        "id": 296099,
+        "title": "Vacation",
+        "director": "John Francis Daley|Jonathan M. Goldstein",
+        "created_at": "2015-07-28",
+        "average_score": 6.1
+    },
+    {
+        "id": 243688,
+        "title": "Poltergeist",
+        "director": "Gil Kenan",
+        "created_at": "2015-05-20",
+        "average_score": 5
+    },
+    {
+        "id": 287424,
+        "title": "Maggie",
+        "director": "Henry Hobson",
+        "created_at": "2015-05-08",
+        "average_score": 5.1
+    },
+    {
+        "id": 301875,
+        "title": "Equals",
+        "director": "Drake Doremus",
+        "created_at": "2015-09-04",
+        "average_score": 5.6
+    },
+    {
+        "id": 181283,
+        "title": "Child 44",
+        "director": "Daniel Espinosa",
+        "created_at": "2015-03-15",
+        "average_score": 5.9
+    },
+    {
+        "id": 328425,
+        "title": "The Gift",
+        "director": "Joel Edgerton",
+        "created_at": "2015-07-30",
+        "average_score": 6.6
+    },
+    {
+        "id": 274167,
+        "title": "Daddy's Home",
+        "director": "Sean Anders",
+        "created_at": "2015-12-25",
+        "average_score": 5.7
+    },
+    {
+        "id": 370687,
+        "title": "Mythica: The Necromancer",
+        "director": "A. Todd Smith",
+        "created_at": "2015-12-19",
+        "average_score": 5.4
+    },
+    {
+        "id": 307663,
+        "title": "Vice",
+        "director": "Brian A Miller",
+        "created_at": "2015-01-16",
+        "average_score": 4.1
+    },
+    {
+        "id": 309809,
+        "title": "The Little Prince",
+        "director": "Mark Osborne",
+        "created_at": "2015-07-29",
+        "average_score": 7.5
+    },
+    {
+        "id": 258509,
+        "title": "Alvin and the Chipmunks: The Road Chip",
+        "director": "Walt Becker",
+        "created_at": "2015-12-17",
+        "average_score": 5.7
+    },
+    {
+        "id": 298382,
+        "title": "The Dressmaker",
+        "director": "Jocelyn Moorhouse",
+        "created_at": "2015-10-01",
+        "average_score": 6.9
+    },
+    {
+        "id": 272693,
+        "title": "The DUFF",
+        "director": "Ari Sandel",
+        "created_at": "2015-02-20",
+        "average_score": 6.8
+    },
+    {
+        "id": 283445,
+        "title": "Sinister 2",
+        "director": "Ciaran Foy",
+        "created_at": "2015-08-19",
+        "average_score": 5.5
+    },
+    {
+        "id": 256961,
+        "title": "Paul Blart: Mall Cop 2",
+        "director": "Andy Fickman",
+        "created_at": "2015-04-16",
+        "average_score": 5.3
+    },
+    {
+        "id": 326359,
+        "title": "Frozen Fever",
+        "director": "Chris Buck|Jennifer Lee",
+        "created_at": "2015-03-09",
+        "average_score": 7
+    },
+    {
+        "id": 254302,
+        "title": "High-Rise",
+        "director": "Ben Wheatley",
+        "created_at": "2015-09-26",
+        "average_score": 5.4
+    },
+    {
+        "id": 241251,
+        "title": "The Boy Next Door",
+        "director": "Rob Cohen",
+        "created_at": "2015-01-23",
+        "average_score": 3.9
+    },
+    {
+        "id": 292040,
+        "title": "Spooks: The Greater Good",
+        "director": "Bharat Nalluri",
+        "created_at": "2015-04-11",
+        "average_score": 5.6
+    },
+    {
+        "id": 188222,
+        "title": "Entourage",
+        "director": "Doug Ellin",
+        "created_at": "2015-06-03",
+        "average_score": 6.2
+    },
+    {
+        "id": 252838,
+        "title": "The Wedding Ringer",
+        "director": "Jeremy Garelick",
+        "created_at": "2015-01-16",
+        "average_score": 6.5
+    },
+    {
+        "id": 273477,
+        "title": "Scouts Guide to the Zombie Apocalypse",
+        "director": "Christopher B. Landon",
+        "created_at": "2015-10-23",
+        "average_score": 6.2
+    },
+    {
+        "id": 298312,
+        "title": "The Visit",
+        "director": "M. Night Shyamalan",
+        "created_at": "2015-09-10",
+        "average_score": 5.9
+    },
+    {
+        "id": 261023,
+        "title": "Black Mass",
+        "director": "Scott Cooper",
+        "created_at": "2015-09-04",
+        "average_score": 6.3
+    },
+    {
+        "id": 336004,
+        "title": "Heist",
+        "director": "Scott Mann",
+        "created_at": "2015-11-13",
+        "average_score": 5.4
+    },
+    {
+        "id": 287903,
+        "title": "Krampus",
+        "director": "Michael Dougherty",
+        "created_at": "2015-11-26",
+        "average_score": 5.9
+    },
+    {
+        "id": 182560,
+        "title": "Dark Places",
+        "director": "Gilles Paquet-Brenner",
+        "created_at": "2015-03-31",
+        "average_score": 5.7
+    },
+    {
+        "id": 192141,
+        "title": "No Escape",
+        "director": "John Erick Dowdle",
+        "created_at": "2015-08-26",
+        "average_score": 6.7
+    },
+    {
+        "id": 308639,
+        "title": "Dope",
+        "director": "Rick Famuyiwa",
+        "created_at": "2015-06-19",
+        "average_score": 7.3
+    },
+    {
+        "id": 261392,
+        "title": "American Ultra",
+        "director": "Nima Nourizadeh",
+        "created_at": "2015-08-19",
+        "average_score": 5.9
+    },
+    {
+        "id": 304357,
+        "title": "Woman in Gold",
+        "director": "Simon Curtis",
+        "created_at": "2015-04-10",
+        "average_score": 7.3
+    },
+    {
+        "id": 297291,
+        "title": "The Scorpion King: The Lost Throne",
+        "director": "Mike Elliott",
+        "created_at": "2015-01-09",
+        "average_score": 4.5
+    },
+    {
+        "id": 266294,
+        "title": "Sisters",
+        "director": "Jason Moore",
+        "created_at": "2015-12-18",
+        "average_score": 5.9
+    },
+    {
+        "id": 227719,
+        "title": "Project Almanac",
+        "director": "Dean Israelite",
+        "created_at": "2015-01-30",
+        "average_score": 6.3
+    },
+    {
+        "id": 86828,
+        "title": "Absolutely Anything",
+        "director": "Terry Jones",
+        "created_at": "2015-06-26",
+        "average_score": 5.8
+    },
+    {
+        "id": 287948,
+        "title": "The Transporter Refueled",
+        "director": "Camille Delamarre",
+        "created_at": "2015-09-03",
+        "average_score": 5.3
+    },
+    {
+        "id": 201085,
+        "title": "Crimson Peak",
+        "director": "Guillermo del Toro",
+        "created_at": "2015-10-13",
+        "average_score": 6.4
+    },
+    {
+        "id": 277355,
+        "title": "Everly",
+        "director": "Joe Lynch",
+        "created_at": "2015-01-23",
+        "average_score": 5.1
+    },
+    {
+        "id": 264999,
+        "title": "Magic Mike XXL",
+        "director": "Gregory Jacobs",
+        "created_at": "2015-07-01",
+        "average_score": 6.3
+    },
+    {
+        "id": 146301,
+        "title": "Paranormal Activity: The Ghost Dimension",
+        "director": "Gregory Plotkin",
+        "created_at": "2015-10-21",
+        "average_score": 5
+    },
+    {
+        "id": 223485,
+        "title": "Slow West",
+        "director": "John Maclean",
+        "created_at": "2015-04-16",
+        "average_score": 6.6
+    },
+    {
+        "id": 294016,
+        "title": "Trumbo",
+        "director": "Jay Roach",
+        "created_at": "2015-10-27",
+        "average_score": 7.2
+    },
+    {
+        "id": 290751,
+        "title": "Secret in Their Eyes",
+        "director": "Billy Ray",
+        "created_at": "2015-10-14",
+        "average_score": 6.2
+    },
+    {
+        "id": 309245,
+        "title": "Mistress America",
+        "director": "Noah Baumbach",
+        "created_at": "2015-08-14",
+        "average_score": 6.4
+    },
+    {
+        "id": 228165,
+        "title": "The SpongeBob Movie: Sponge Out of Water",
+        "director": "Paul Tibbitt",
+        "created_at": "2015-02-05",
+        "average_score": 5.7
+    },
+    {
+        "id": 245706,
+        "title": "True Story",
+        "director": "Rupert Goold",
+        "created_at": "2015-04-17",
+        "average_score": 6
+    },
+    {
+        "id": 272878,
+        "title": "Max",
+        "director": "Boaz Yakin",
+        "created_at": "2015-06-26",
+        "average_score": 7
+    },
+    {
+        "id": 263109,
+        "title": "Shaun the Sheep Movie",
+        "director": "Mark Burton|Richard Starzack",
+        "created_at": "2015-02-05",
+        "average_score": 6.9
+    },
+    {
+        "id": 157827,
+        "title": "Louder Than Bombs",
+        "director": "Joachim Trier",
+        "created_at": "2015-05-18",
+        "average_score": 6.3
+    },
+    {
+        "id": 321751,
+        "title": "A Perfect Day",
+        "director": "Fernando LeÃ³n de Aranoa",
+        "created_at": "2015-08-28",
+        "average_score": 6.3
+    },
+    {
+        "id": 266396,
+        "title": "The Gunman",
+        "director": "Pierre Morel",
+        "created_at": "2015-02-16",
+        "average_score": 5.6
+    },
+    {
+        "id": 277685,
+        "title": "Unfriended",
+        "director": "Levan Gabriadze",
+        "created_at": "2015-04-17",
+        "average_score": 5.6
+    },
+    {
+        "id": 268920,
+        "title": "Hot Pursuit",
+        "director": "Anne Fletcher",
+        "created_at": "2015-05-08",
+        "average_score": 5.5
+    },
+    {
+        "id": 280092,
+        "title": "Insidious: Chapter 3",
+        "director": "Leigh Whannell",
+        "created_at": "2015-06-04",
+        "average_score": 6.3
+    },
+    {
+        "id": 193687,
+        "title": "Z for Zachariah",
+        "director": "Craig Zobel",
+        "created_at": "2015-08-13",
+        "average_score": 5.5
+    },
+    {
+        "id": 300803,
+        "title": "Dragonheart 3: The Sorcerer's Curse",
+        "director": "Colin Teague",
+        "created_at": "2015-02-24",
+        "average_score": 4.5
+    },
+    {
+        "id": 328589,
+        "title": "The Lady in the Van",
+        "director": "Nicholas Hytner",
+        "created_at": "2015-11-13",
+        "average_score": 5.9
+    },
+    {
+        "id": 228066,
+        "title": "Victor Frankenstein",
+        "director": "Paul McGuigan",
+        "created_at": "2015-11-10",
+        "average_score": 5.5
+    },
+    {
+        "id": 378373,
+        "title": "Brothers of the Wind",
+        "director": "Gerado Olivares|Otmar Penker",
+        "created_at": "2015-12-24",
+        "average_score": 7.5
+    },
+    {
+        "id": 291270,
+        "title": "Anomalisa",
+        "director": "Duke Johnson|Charlie Kaufman",
+        "created_at": "2015-12-30",
+        "average_score": 6.7
+    },
+    {
+        "id": 294963,
+        "title": "Bone Tomahawk",
+        "director": "S. Craig Zahler",
+        "created_at": "2015-10-23",
+        "average_score": 6.3
+    },
+    {
+        "id": 241257,
+        "title": "Regression",
+        "director": "Alejandro AmenÃ¡bar",
+        "created_at": "2015-10-01",
+        "average_score": 5.2
+    },
+    {
+        "id": 245698,
+        "title": "Pawn Sacrifice",
+        "director": "Edward Zwick",
+        "created_at": "2015-09-16",
+        "average_score": 6.6
+    },
+    {
+        "id": 353326,
+        "title": "The Man Who Knew Infinity",
+        "director": "Matt Brown",
+        "created_at": "2015-09-17",
+        "average_score": 7.1
+    },
+    {
+        "id": 346808,
+        "title": "Momentum",
+        "director": "Stephen S. Campanelli",
+        "created_at": "2015-08-01",
+        "average_score": 5.8
+    },
+    {
+        "id": 250124,
+        "title": "The Diary of a Teenage Girl",
+        "director": "Marielle Heller",
+        "created_at": "2015-08-07",
+        "average_score": 6.8
+    },
+    {
+        "id": 290637,
+        "title": "Pay the Ghost",
+        "director": "Uli Edel",
+        "created_at": "2015-09-16",
+        "average_score": 5.3
+    },
+    {
+        "id": 244458,
+        "title": "The Voices",
+        "director": "Marjane Satrapi",
+        "created_at": "2015-02-06",
+        "average_score": 6
+    },
+    {
+        "id": 308504,
+        "title": "Last Knights",
+        "director": "Kazuaki Kiriya",
+        "created_at": "2015-04-03",
+        "average_score": 6.3
+    },
+    {
+        "id": 314405,
+        "title": "Il racconto dei racconti",
+        "director": "Matteo Garrone",
+        "created_at": "2015-05-14",
+        "average_score": 5.7
+    },
+    {
+        "id": 282984,
+        "title": "Irrational Man",
+        "director": "Woody Allen",
+        "created_at": "2015-07-17",
+        "average_score": 6.1
+    },
+    {
+        "id": 157843,
+        "title": "Queen of the Desert",
+        "director": "Werner Herzog",
+        "created_at": "2015-09-03",
+        "average_score": 6
+    },
+    {
+        "id": 275601,
+        "title": "Ricki and the Flash",
+        "director": "Jonathan Demme",
+        "created_at": "2015-07-10",
+        "average_score": 5.5
+    },
+    {
+        "id": 290762,
+        "title": "Miss You Already",
+        "director": "Catherine Hardwicke",
+        "created_at": "2015-09-12",
+        "average_score": 7.2
+    },
+    {
+        "id": 251516,
+        "title": "Kung Fury",
+        "director": "David Sandberg",
+        "created_at": "2015-05-28",
+        "average_score": 7.7
+    },
+    {
+        "id": 304372,
+        "title": "The Perfect Guy",
+        "director": "David M. Rosenthal",
+        "created_at": "2015-09-11",
+        "average_score": 5.6
+    },
+    {
+        "id": 324807,
+        "title": "A Bigger Splash",
+        "director": "Luca Guadagnino",
+        "created_at": "2015-11-26",
+        "average_score": 5.8
+    },
+    {
+        "id": 252512,
+        "title": "While We're Young",
+        "director": "Noah Baumbach",
+        "created_at": "2015-03-27",
+        "average_score": 5.9
+    },
+    {
+        "id": 257091,
+        "title": "Get Hard",
+        "director": "Etan Cohen",
+        "created_at": "2015-03-26",
+        "average_score": 5.9
+    },
+    {
+        "id": 228968,
+        "title": "Kidnapping Mr. Heineken",
+        "director": "Daniel Alfredson",
+        "created_at": "2015-03-12",
+        "average_score": 5.8
+    },
+    {
+        "id": 347969,
+        "title": "The Ridiculous 6",
+        "director": "Frank Coraci",
+        "created_at": "2015-12-11",
+        "average_score": 4.8
+    },
+    {
+        "id": 237756,
+        "title": "Kill Me Three Times",
+        "director": "Kriv Stenders",
+        "created_at": "2015-04-10",
+        "average_score": 5.1
+    },
+    {
+        "id": 293646,
+        "title": "The 33",
+        "director": "Patricia Riggen",
+        "created_at": "2015-08-06",
+        "average_score": 5.8
+    },
+    {
+        "id": 245168,
+        "title": "Suffragette",
+        "director": "Sarah Gavron",
+        "created_at": "2015-10-16",
+        "average_score": 7.1
+    },
+    {
+        "id": 311291,
+        "title": "45 Years",
+        "director": "Andrew Haigh",
+        "created_at": "2015-08-28",
+        "average_score": 6
+    },
+    {
+        "id": 301351,
+        "title": "We Are Your Friends",
+        "director": "Max Joseph",
+        "created_at": "2015-08-26",
+        "average_score": 6.2
+    },
+    {
+        "id": 248574,
+        "title": "Barely Lethal",
+        "director": "Kyle Newman",
+        "created_at": "2015-04-30",
+        "average_score": 5.5
+    },
+    {
+        "id": 225728,
+        "title": "Macbeth",
+        "director": "Justin Kurzel",
+        "created_at": "2015-08-16",
+        "average_score": 6.4
+    },
+    {
+        "id": 326425,
+        "title": "Extraction",
+        "director": "Steven C. Miller",
+        "created_at": "2015-12-18",
+        "average_score": 4.2
+    },
+    {
+        "id": 342474,
+        "title": "Jenny's Wedding",
+        "director": "Mary Agnes Donoghue",
+        "created_at": "2015-07-31",
+        "average_score": 5.2
+    },
+    {
+        "id": 277217,
+        "title": "Descendants",
+        "director": "Kenny Ortega",
+        "created_at": "2015-07-31",
+        "average_score": 6.7
+    },
+    {
+        "id": 207936,
+        "title": "Tumbledown",
+        "director": "Sean Mewshaw",
+        "created_at": "2015-04-18",
+        "average_score": 6.6
+    },
+    {
+        "id": 250734,
+        "title": "Far from the Madding Crowd",
+        "director": "Thomas Vinterberg",
+        "created_at": "2015-05-01",
+        "average_score": 6.9
+    },
+    {
+        "id": 249688,
+        "title": "The End of the Tour",
+        "director": "James Ponsoldt",
+        "created_at": "2015-07-31",
+        "average_score": 7.3
+    },
+    {
+        "id": 268238,
+        "title": "The Second Best Exotic Marigold Hotel",
+        "director": "John Madden",
+        "created_at": "2015-02-26",
+        "average_score": 6.4
+    },
+    {
+        "id": 256962,
+        "title": "Little Boy",
+        "director": "Alejandro Monteverde",
+        "created_at": "2015-04-23",
+        "average_score": 7.1
+    },
+    {
+        "id": 322456,
+        "title": "LEGO DC Comics Super Heroes: Justice League vs. Bizarro League",
+        "director": "Brandon Vietti",
+        "created_at": "2015-02-10",
+        "average_score": 6.4
+    },
+    {
+        "id": 302528,
+        "title": "Remember",
+        "director": "Atom Egoyan",
+        "created_at": "2015-10-23",
+        "average_score": 7.7
+    },
+    {
+        "id": 222936,
+        "title": "Aloha",
+        "director": "Cameron Crowe",
+        "created_at": "2015-05-27",
+        "average_score": 5.2
+    },
+    {
+        "id": 316002,
+        "title": "Accidental Love",
+        "director": "David O. Russell|Stephen Greene",
+        "created_at": "2015-02-10",
+        "average_score": 3.6
+    },
+    {
+        "id": 365806,
+        "title": "Halo: The Fall of Reach",
+        "director": "Ian Kirby",
+        "created_at": "2015-10-27",
+        "average_score": 5.3
+    },
+    {
+        "id": 10317,
+        "title": "Our Brand Is Crisis",
+        "director": "David Gordon Green",
+        "created_at": "2015-09-11",
+        "average_score": 5.7
+    },
+    {
+        "id": 334538,
+        "title": "Into the Forest",
+        "director": "Patricia Rozema",
+        "created_at": "2015-06-03",
+        "average_score": 5.1
+    },
+    {
+        "id": 306947,
+        "title": "The Invitation",
+        "director": "Karyn Kusama",
+        "created_at": "2015-03-13",
+        "average_score": 6.4
+    },
+    {
+        "id": 328901,
+        "title": "The Benefactor",
+        "director": "Andrew Renzi",
+        "created_at": "2015-04-17",
+        "average_score": 4.5
+    },
+    {
+        "id": 382517,
+        "title": "Open Season: Scared Silly",
+        "director": "David Feiss",
+        "created_at": "2015-12-31",
+        "average_score": 5.6
+    },
+    {
+        "id": 310133,
+        "title": "Cop Car",
+        "director": "Jon Watts",
+        "created_at": "2015-08-07",
+        "average_score": 5.5
+    },
+    {
+        "id": 237584,
+        "title": "Mojave",
+        "director": "William Monahan",
+        "created_at": "2015-04-18",
+        "average_score": 4.3
+    },
+    {
+        "id": 288036,
+        "title": "Sleeping with Other People",
+        "director": "Leslye Headland",
+        "created_at": "2015-06-26",
+        "average_score": 6.2
+    },
+    {
+        "id": 354110,
+        "title": "Forsaken",
+        "director": "Jon Cassar",
+        "created_at": "2015-09-16",
+        "average_score": 5.6
+    },
+    {
+        "id": 331781,
+        "title": "Amy",
+        "director": "Asif Kapadia",
+        "created_at": "2015-07-03",
+        "average_score": 7.5
+    },
+    {
+        "id": 253161,
+        "title": "Madame Bovary",
+        "director": "Sophie Barthes",
+        "created_at": "2015-06-04",
+        "average_score": 5.3
+    },
+    {
+        "id": 312831,
+        "title": "The Hallow",
+        "director": "Corin Hardy",
+        "created_at": "2015-11-06",
+        "average_score": 4.9
+    },
+    {
+        "id": 316322,
+        "title": "Barbie in Princess Power",
+        "director": "Zeke Norton",
+        "created_at": "2015-01-29",
+        "average_score": 5.5
+    }
+]

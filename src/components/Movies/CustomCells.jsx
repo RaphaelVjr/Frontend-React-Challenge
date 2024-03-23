@@ -47,6 +47,15 @@ export const CreatedDateCell = (props) => {
   }
 };
 
+export const UpdateddDateCell = (props) => {
+  const { dataItem } = props;
+  if (dataItem && dataItem.updated_at !== undefined) {
+    const date = (dataItem.updated_at);
+    const formattedDate = format(date, 'yyyy-MM-dd HH:mm');
+    return <td {...props.tdProps}>{formattedDate}</td>;
+  }
+};
+
 
 export const ColumnMenu = (props) => {
   return (
