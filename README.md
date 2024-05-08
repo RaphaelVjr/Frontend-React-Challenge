@@ -1,5 +1,5 @@
 
-# Kendo Movies Project Job Apply
+# Kendo Movies Project Job Apply 📚
 
 A movie web app that consume an large movies API from TMDB. Login: admin@rotten, password: admin (must be used to access dashboard). Normal login access the /home.
 
@@ -21,7 +21,7 @@ Clone repository
 git clone https://github.com/RaphaelVjr/frontend.git
 ```
 
-## Installation Node (Required)
+## Installation Node (Required) 🛠️
 
 You need to install:
 
